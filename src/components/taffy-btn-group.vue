@@ -1,9 +1,11 @@
 <template>
+  <div class="btn-group">
     <TaffyBtn v-for="btn in btns.button_list" :key="btn" :btn="btn" />
+  </div>
 </template>
 
 <script>
-import TaffyBtn from "./TaffyBtn.vue";
+import TaffyBtn from "./taffy-btn.vue";
 
 export default {
   name: "TaffyBtnGroup",
@@ -18,3 +20,9 @@ export default {
   },
 };
 </script>
+
+<style>
+.btn-group {
+  text-align: left;
+}
+</style>

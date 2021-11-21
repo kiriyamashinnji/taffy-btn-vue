@@ -1,6 +1,8 @@
 <template>
-  <Nav :btnOverview="btnOverview" :sideBarWidth="sideBarWidth"></Nav>
-  <Main :btnOverview="btnOverview" :sideBarWidth="sideBarWidth"></Main>
+  <div>
+    <nav :btnOverview="btnOverview" @sideBarToggled="toggleSideBar"></nav>
+    <main :btnOverview="btnOverview" :sideBarToggled="sideBarToggled"></main>
+  </div>
 </template>
 
 <script>
@@ -12,8 +14,8 @@ export default {
   name: "App",
 
   components: {
+    Main,
     Nav,
-    Main
   },
 
   data: () => {
@@ -21,8 +23,7 @@ export default {
       loading: false,
       btnOverview: null,
       error: null,
-
-      sideBarWidth:'18rem',
+      sideBarToggled: false,
     };
   },
 
@@ -31,6 +32,11 @@ export default {
   },
 
   methods: {
+    toggleSideBar(x) {
+      this.sideBarToggled = x
+      console.log(x)
+    },
+
     fetchData() {
       this.isloading = true;
       this.error = null;
@@ -52,11 +58,12 @@ export default {
 </script>
 
 <style>
-html {
+:root {
   --bs-primary: #fd507e;
   --bs-body-bg: #fffffa;
   --bs-btn-hover: #cf2f59;
-
+  --side-padding: 8px;
+  --radius-size: 25px;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
@@ -65,6 +72,6 @@ html {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
-  background-color: var(--bs-body-bg);  
+  background-color: var(--bs-body-bg);
 }
 </style>

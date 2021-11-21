@@ -7,3 +7,4 @@ app.mount('#app')
 
 const player = new Player()
 app.config.globalProperties.$player = player
+app.config.globalProperties.$sideBarWidth = 0;

@@ -1,32 +1,40 @@
 <template>
-  <div class="main">
-    <div v-for="btns in btnOverview" :key="btns">
+  <div class="main" :class="{active: !sideBarToggled}">
+    <div v-for="btns in btnOverview" :key="btns" >
       <TaffyBtnGroup :btns="btns" />
     </div>
   </div>
 </template>
 
 <script>
-import TaffyBtnGroup from "./TaffyBtnGroup.vue";
+import TaffyBtnGroup from "./taffy-btn-group.vue";
 
 export default {
-  name: "Main",
+  name: "main",
   components: {
     TaffyBtnGroup,
   },
   data: () => {
-    return {};
+    return { 
+    };
   },
-
+  mounted() {
+  },
   props: {
     btnOverview: Object,
-    sideBarWidth: String,
+    sideBarToggled: Boolean,
   },
 };
 </script>
 
 <style>
 .main {
-  margin-left: v-bind(sideBarWidth);
+  margin-left: 18rem;
+  transition: 0.75s cubic-bezier(0.39, 0.58, 0.57, 1);
 }
+
+.main.active  {
+  margin-left: 8rem;
+}
+
 </style>
