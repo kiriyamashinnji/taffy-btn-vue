@@ -1,16 +1,16 @@
 <template>
   <div class="main" :class="{active: !sideBarToggled}">
-    <div v-for="btns in btnOverview" :key="btns" >
-      <TaffyBtnGroup :btns="btns" />
-    </div>
+    
+      <TaffyBtnGroup :btns="btnOverview[activeId]" />
+    
   </div>
 </template>
 
 <script>
-import TaffyBtnGroup from "./taffy-btn-group.vue";
+import TaffyBtnGroup from "./TaffyBtnGroup.vue";
 
 export default {
-  name: "main",
+  name: "Main",
   components: {
     TaffyBtnGroup,
   },
@@ -23,6 +23,7 @@ export default {
   props: {
     btnOverview: Object,
     sideBarToggled: Boolean,
+    activeId: Number,
   },
 };
 </script>
@@ -30,11 +31,12 @@ export default {
 <style>
 .main {
   margin-left: 18rem;
-  transition: 0.75s cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: 0.65s ease-out;
 }
 
 .main.active  {
-  margin-left: 8rem;
+  transition: 0.65s ease-out;
+  margin-left: 9rem;
 }
 
 </style>

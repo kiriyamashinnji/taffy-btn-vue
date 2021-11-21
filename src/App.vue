@@ -1,7 +1,15 @@
 <template>
   <div>
-    <nav :btnOverview="btnOverview" @sideBarToggled="toggleSideBar"></nav>
-    <main :btnOverview="btnOverview" :sideBarToggled="sideBarToggled"></main>
+    <Nav 
+      :btnOverview="btnOverview" 
+      @sideBarToggled="toggleSideBar"
+      @activeSetted="setActive"  
+    />
+    <Main 
+      :btnOverview="btnOverview" 
+      :sideBarToggled="sideBarToggled"
+      :activeId="activeId"
+    />
   </div>
 </template>
 
@@ -24,6 +32,7 @@ export default {
       btnOverview: null,
       error: null,
       sideBarToggled: false,
+      activeId: 0,
     };
   },
 
@@ -33,10 +42,11 @@ export default {
 
   methods: {
     toggleSideBar(x) {
-      this.sideBarToggled = x
-      console.log(x)
+      this.sideBarToggled = x;
     },
-
+    setActive(id) {
+      this.activeId = id;
+    },
     fetchData() {
       this.isloading = true;
       this.error = null;

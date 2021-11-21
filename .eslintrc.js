@@ -13,8 +13,6 @@ module.exports = {
         'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
         
-        "vue/no-unused-components": "off",
-
 
         // 函数名和参数列表之间的空格
         'space-before-function-paren': ['error', {

@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import TaffyBtn from "./taffy-btn.vue";
+import TaffyBtn from "./TaffyBtn.vue";
 
 export default {
   name: "TaffyBtnGroup",
