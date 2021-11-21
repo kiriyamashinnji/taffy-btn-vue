@@ -1,27 +1,28 @@
 <template>
-  <div v-if="!loading">
-    <div v-for="btn of btns" :key="btn">
-      <TaffyBtnGroup :btns="btn" />
-    </div>
-  </div>
+  <Nav :btnOverview="btnOverview" :sideBarWidth="sideBarWidth"></Nav>
+  <Main :btnOverview="btnOverview" :sideBarWidth="sideBarWidth"></Main>
 </template>
 
 <script>
-import TaffyBtnGroup from "./components/TaffyBtnGroup.vue";
+import Main from "./components/Main.vue";
+import Nav from "./components/Nav.vue";
 import axios from "axios";
 
 export default {
   name: "App",
 
   components: {
-    TaffyBtnGroup,
+    Nav,
+    Main
   },
 
   data: () => {
     return {
       loading: false,
-      btns: null,
+      btnOverview: null,
       error: null,
+
+      sideBarWidth:'18rem',
     };
   },
 
@@ -40,7 +41,7 @@ export default {
         })
         .then((response) => {
           this.loading = false;
-          this.btns = response.data.data;
+          this.btnOverview = response.data.data;
         })
         .catch((error) => {
           this.error = error;
