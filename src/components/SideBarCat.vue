@@ -2,7 +2,7 @@
   <li @click="setActive()"  :class="{ active: categoryId == activeId }">
     <a href="#">
       <span class="icon">
-        <!-- <ion-icon name="newspaper-outline"></ion-icon> -->
+        <img :src="iconUrl">
       </span>
       <span class="title">{{
         categoryName
@@ -19,6 +19,7 @@ export default {
     categoryName: String,
     activeId: Number,
     categoryId: Number,
+    iconUrl: String
   },
 
   methods: {
@@ -31,11 +32,11 @@ export default {
 
 <style>
 nav.side-bar ul li {
-  height: 50px;
-  padding: 10px var(--radius-size);
+  height: 5rem;
+  padding: 0.3rem 0.9rem;
   list-style: none;
   border-radius: var(--radius-size);
-  margin-bottom: var(--radius-size);
+  margin: calc(var(--radius-size)/2) 0 ;
   z-index: 1;
 }
 nav.side-bar ul li:not(.active) {
@@ -48,7 +49,7 @@ nav.side-bar ul li.active {
   position: relative;
   background-color: var(--bs-body-bg);
   border-radius: var(--radius-size) 0 0 var(--radius-size);
-  box-shadow: var(--side-padding) 0 var(--bs-body-bg);
+  box-shadow: 10px 0 var(--bs-body-bg);
 }
 
 li.active > a {
@@ -108,4 +109,17 @@ aside:hover nav.side-bar span.title {
   max-width: 10rem;
   opacity: 1;
 }
+
+.icon img {
+  width: 5rem;
+}
+
+.icon {
+  overflow: hidden;
+  background-color: var(--bs-body-bg);
+  padding: 0rem;
+  border-radius: 50%;
+}
+
+
 </style>

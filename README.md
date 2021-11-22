@@ -33,7 +33,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   - [x] Buttons.
 - [ ] Sidebar.
   - [ ] Contents in the jq version.
-  - [ ] Taffy emojis as icons.
+  - [x] Taffy emojis as icons.
 - [ ] Topnav bar.
   - [ ] Contents in the jq version.
 - [ ] Footer.

@@ -30,13 +30,13 @@ export default {
 
 <style>
 .main {
-  margin-left: 18rem;
+  margin-left: 20rem;
   transition: 0.65s ease-out;
 }
 
 .main.active  {
   transition: 0.65s ease-out;
-  margin-left: 9rem;
+  margin-left: 11rem;
 }
 
 </style>

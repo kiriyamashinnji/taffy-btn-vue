@@ -21,8 +21,9 @@
             v-for="(btns, index) in btnOverview"
             :key="btns"
             :categoryName="btns.button_classification"
-            :categoryId='index'
+            :categoryId="index"
             :activeId="activeId"
+            :iconUrl="btns.icon_url"
             @activeSetted="setActive"
           />
         </ul>
@@ -45,8 +46,7 @@ export default {
     SideBarCat,
   },
 
-  mounted() {
-  },
+  mounted() {},
 
   data: () => {
     return {
@@ -68,7 +68,7 @@ export default {
     },
     emitActive(id) {
       this.$emit("activeSetted", id);
-    }
+    },
   },
 };
 </script>
@@ -106,14 +106,13 @@ nav.side-bar .logo-area {
   --curve-size: calc(2 * var(--radius-size));
   position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
   padding: 20px;
   min-height: var(--curve-size);
 }
 nav.side-bar .logo-area img {
   position: relative;
-  max-width: 4rem;
+  max-width: 5rem;
   transition: 0.75s ease-out;
 }
 
@@ -128,7 +127,7 @@ nav.side-bar ul {
   font-size: 2rem;
   font-weight: bold;
   color: var(--bs-body-bg);
-  padding-left: 1rem;
-  transition: 0.75s ease-out; 
+  padding-left: 0.5rem;
+  transition: 0.75s ease-out;
 }
 </style>
