@@ -33,10 +33,10 @@ export default {
 <style>
 nav.side-bar ul li {
   height: 5rem;
-  padding: 0.3rem 0.9rem;
+  padding: 0.3rem 1.3rem;
   list-style: none;
   border-radius: var(--radius-size);
-  margin: calc(var(--radius-size)/2) 0 ;
+  margin: calc(var(--radius-size)/3) 0 ;
   z-index: 1;
 }
 nav.side-bar ul li:not(.active) {
@@ -49,7 +49,7 @@ nav.side-bar ul li.active {
   position: relative;
   background-color: var(--bs-body-bg);
   border-radius: var(--radius-size) 0 0 var(--radius-size);
-  box-shadow: 10px 0 var(--bs-body-bg);
+  box-shadow: 13px 0 var(--bs-body-bg);
 }
 
 li.active > a {
@@ -118,7 +118,7 @@ aside:hover nav.side-bar span.title {
   overflow: hidden;
   background-color: var(--bs-body-bg);
   padding: 0rem;
-  border-radius: 50%;
+  border-radius: 30%;
 }
 
 

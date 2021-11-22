@@ -1,6 +1,7 @@
 <template>
+  
   <div class="main" :class="{active: !sideBarToggled}">
-    
+      <TopNav></TopNav>
       <TaffyBtnGroup :btns="btnOverview[activeId]" />
     
   </div>
@@ -8,11 +9,13 @@
 
 <script>
 import TaffyBtnGroup from "./TaffyBtnGroup.vue";
+import TopNav from "./TopNav.vue";
 
 export default {
   name: "Main",
   components: {
     TaffyBtnGroup,
+    TopNav
   },
   data: () => {
     return { 

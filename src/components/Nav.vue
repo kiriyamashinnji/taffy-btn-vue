@@ -16,6 +16,7 @@
           <img class="min" src="../assets/logo.png" alt="logo" />
           <span class="logo-text title">SainTaffy</span>
         </div>
+        <div class="divider"></div>
         <ul>
           <SideBarCat
             v-for="(btns, index) in btnOverview"
@@ -76,7 +77,7 @@ export default {
 <style scoped>
 /* SideBar */
 aside.side-bar-wrap {
-  --radius-size: 25px;
+  --radius-size: 40px;
   height: 100%;
   position: fixed;
   top: 0;
@@ -112,13 +113,12 @@ nav.side-bar .logo-area {
 }
 nav.side-bar .logo-area img {
   position: relative;
-  max-width: 5rem;
+  max-width: 6rem;
   transition: 0.75s ease-out;
 }
 
 nav.side-bar ul {
   padding: 0;
-  margin: calc(2 * var(--radius-size)) 0;
   display: flex;
   flex-direction: column;
 }
@@ -129,5 +129,14 @@ nav.side-bar ul {
   color: var(--bs-body-bg);
   padding-left: 0.5rem;
   transition: 0.75s ease-out;
+}
+
+.divider {
+  width: 80%;
+  height: 3px;
+  padding: 1px;
+  margin: auto;
+  background-color: var(--bs-body-bg);
+  border-radius: 3px;
 }
 </style>
