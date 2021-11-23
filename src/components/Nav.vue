@@ -81,18 +81,7 @@ aside.side-bar-wrap {
   position: fixed;
   top: 0;
   left: 0;
-  overflow-y: scroll;
   overflow-x: hidden;
-}
-aside.side-bar-wrap::-webkit-scrollbar {
-  width: 10px;
-}
-aside.side-bar-wrap::-webkit-scrollbar-track {
-  background-color: transparent;
-}
-aside.side-bar-wrap::-webkit-scrollbar-thumb {
-  border-radius: var(--radius-size);
-  background-color: var(--bs-primary);
 }
 
 nav.side-bar {

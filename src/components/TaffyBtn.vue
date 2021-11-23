@@ -76,6 +76,25 @@ div {
   transition-duration: var(--ease-time);
 }
 
+.tf-btn:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bs-btn-hover);
+  border-radius: 100%;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  -webkit-transition-property: transform;
+  transition-property: transform;
+  -webkit-transition-duration: var(--ease-time);
+  transition-duration: var(--ease-time);
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
 .tf-btn:hover,
 .tf-btn:focus,
 .tf-btn:active {
