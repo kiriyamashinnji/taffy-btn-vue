@@ -62,21 +62,21 @@ export default {
         case 1:
           this.paused = !this.paused;
           if(this.paused) {
-            this.$player.pause();
+            this.$emit('pause');
           } else {
-            this.$player.continue();
+            this.$emit('_continue');
           }
           break;
         case 2:
           this.overlap = index[1] === 1;
-          this.$player.setMode(this.mode, this.overlap);
+          this.$emit('setMode', this.mode, this.overlap);
           break;
         case 3:
           this.mode = this.widgetSrcs[2][index[1]];
-          this.$player.setMode(this.mode, this.overlap);
+          this.$emit('setMode', this.mode, this.overlap);
           break;
         case 4:
-          this.$player.playRandom();
+          this.$emit('playRandom');
           break;
       }
     },

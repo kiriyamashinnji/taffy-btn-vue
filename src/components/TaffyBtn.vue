@@ -3,7 +3,9 @@
     <div class="tf-btn-content" v-on:click="onClick()">
       {{ btn.voice_name }}
     </div>
-    <img src="../assets/four-leafed-clover.svg" class="tf-btn-icon" />
+    <img src="../assets/four-leafed-clover.svg" 
+    class="tf-btn-icon"
+    :class="classObject" />
   </div>
 </template>
 
@@ -13,15 +15,26 @@ export default {
 
   props: {
     btn: Object,
+    playUrlList: Object,
+    isPaused: Boolean
   },
 
   data: () => {
     return {};
   },
-  
+
+  computed: {
+    classObject() {
+      return {
+        paused: this.isPaused,
+        active: this.playUrlList.indexOf(this.btn.voice_url) > -1
+      };
+    }
+  },
+
   methods: {
     onClick: function () {
-      this.$player.play(this.btn.voice_url);
+      this.$emit('play', this.btn.voice_url);
     },
   },
 };
@@ -41,6 +54,12 @@ div {
   -moz-animation: spin 1s linear infinite;
   animation: spin 1s linear infinite;
 }
+
+.paused {
+  -webkit-animation-play-state: paused !important;
+  animation-play-state: paused !important;
+}
+
 .tf-btn-content {
   min-height: 1.8rem;
 }

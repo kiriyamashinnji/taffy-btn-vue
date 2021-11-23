@@ -15,6 +15,7 @@ class Player {
         this.loop = false;
         this.random = false;
         this.overlap = false;
+        this.paused = false;
         this.playList = [];
         this.soundList = [];
     }

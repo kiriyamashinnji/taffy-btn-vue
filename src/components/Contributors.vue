@@ -2,24 +2,24 @@
   <div id="myModal" class="modal" @click="onClick">
     <!-- Modal content -->
     <div class="modal-content">
-      <h2 style="margin-top:0rem;">
-        关于
-      </h2>
+      <h2 style="margin-top: 0rem">关于</h2>
       <div>
         <h3>后端</h3>
         AceRetro
         <h3>前端</h3>
         永雏史莱姆懒狗
-        <br>
+        <br />
         <h3>设计</h3>
         永雏史莱姆懒狗
-        <br>
+        <br />
+        壹色玻鲤
+        <br />
         永雏塔菲装扮表情
         <br>
-        <br>
+        <br />
         <h3>声音来源</h3>
         永雏塔菲
-        <br>
+        <br />
         <h3>声音提供</h3>
         只凝视你的时候
       </div>
@@ -29,23 +29,22 @@
 
 <script>
 export default {
-    methods: {
-        onClick(e) {
-            if (e.target.className === "modal") {
-                console.log("clicked");
-                this.onClose();
-            }
-        },
-        onClose() {
-            this.$emit("close");
-        },
+  methods: {
+    onClick(e) {
+      if (e.target.className === "modal") {
+        console.log("clicked");
+        this.onClose();
+      }
     },
-}
-
+    onClose() {
+      this.$emit("close");
+    },
+  },
+};
 </script>
 
 <style scoped>
-/* The Modal (background) */
+
 .modal {
   /* display: none; Hidden by default */
   position: fixed; /* Stay in place */

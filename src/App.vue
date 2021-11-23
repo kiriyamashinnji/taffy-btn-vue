@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-if="!loading">
     <Nav
         :btnOverview="btnOverview"
         @sideBarToggled="toggleSideBar"
@@ -12,7 +12,6 @@
     />
 
     <Footer @showContributors="showContributors"/>
-    <Widgets/>
 
     <transition name="modal">
       <Contributors v-if="contributorsShown" @close="closeContributors"/>
@@ -24,7 +23,6 @@
 import Main from "./components/Main.vue";
 import Nav from "./components/Nav.vue";
 import Footer from "./components/Footer.vue";
-import Widgets from "./components/Widgets.vue";
 import Contributors from "./components/Contributors.vue";
 import axios from "axios";
 
@@ -35,7 +33,6 @@ export default {
     Main,
     Nav,
     Footer,
-    Widgets,
     Contributors,
   },
 
@@ -73,7 +70,7 @@ export default {
       this.activeId = id;
     },
     fetchData() {
-      this.isloading = true;
+      this.loading = true;
       this.error = null;
 
       axios

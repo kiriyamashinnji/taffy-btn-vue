@@ -29,18 +29,18 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   - [x] Sidebar.
   - [x] Topnavbar.
   - [x] Footer.
-  - [ ] Player.
+  - [x] Player.
   - [x] Buttons.
 - [x] Sidebar.
   - [x] Contents in the jq version.
   - [x] Taffy emojis as icons.
 - [x] Topnav bar.
   - [x] Contents in the jq version.
-- [ ] Footer.
+- [x] Footer.
   - [x] Contents in the jq version.
-  - [ ] Float .
+  - [x] Float .
 - [ ] Player.
-  - [ ] Contents in the jq version.
+  - [x] Contents in the jq version.
   - [ ] Better icons.
 - [ ] Buttons.
   - [x] Contents in the jq version.
