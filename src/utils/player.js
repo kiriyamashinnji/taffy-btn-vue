@@ -26,7 +26,7 @@ class Player {
         }
         let audio = new Audio(url);
         audio.player = this;
-        audio.onended = this.audioEnd;
+        audio.onended = audioEnd;
         this.playList.push(audio);
         audio.loop = this.loop;
         audio.play();
@@ -74,20 +74,20 @@ class Player {
     }
 
     playRandom() {
-        let idx = this.randInt(0, this.soundList.length - 1);
+        let idx = randInt(0, this.soundList.length - 1);
         this.play(this.soundList[idx]);
     }
-
-    // Todo: 这个方法存在问题需要重写
-    audioEnd() {
-        if (this.playList.length === 1 && this.random)
-            this.playRandom();
-        if (this.ended) this.remove(this);
-    }
-
-    randInt(l, h) {
-        return Math.floor(Math.random() * (h - l + 1)) + l;
-    }
 }
+// not todo: 这个方法存在问题需要重写
+function audioEnd() {
+    if (this.playList.length === 1 && this.random)
+        this.playRandom();
+    if (this.ended) this.remove(this);
+}
+
+function randInt(l, h) {
+    return Math.floor(Math.random() * (h - l + 1)) + l;
+}
+
 
 export default Player

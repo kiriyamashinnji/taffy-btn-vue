@@ -27,17 +27,17 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 .
 - [ ] basic layouts.
   - [x] Sidebar.
-  - [ ] Topnavbar.
-  - [ ] Footer.
+  - [x] Topnavbar.
+  - [x] Footer.
   - [ ] Player.
   - [x] Buttons.
-- [ ] Sidebar.
-  - [ ] Contents in the jq version.
+- [x] Sidebar.
+  - [x] Contents in the jq version.
   - [x] Taffy emojis as icons.
-- [ ] Topnav bar.
-  - [ ] Contents in the jq version.
+- [x] Topnav bar.
+  - [x] Contents in the jq version.
 - [ ] Footer.
-  - [ ] Contents in the jq version.
+  - [x] Contents in the jq version.
   - [ ] Float .
 - [ ] Player.
   - [ ] Contents in the jq version.

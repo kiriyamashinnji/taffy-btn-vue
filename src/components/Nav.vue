@@ -1,7 +1,5 @@
 <template>
   <div>
-    <!-- Nav -->
-    <nav></nav>
     <!-- Btn category selection for mobile -->
 
     <!-- Btn category selection for pc or taplate-->
@@ -78,6 +76,7 @@ export default {
 /* SideBar */
 aside.side-bar-wrap {
   --radius-size: 40px;
+  z-index: 1;
   height: 100%;
   position: fixed;
   top: 0;
@@ -107,13 +106,14 @@ nav.side-bar .logo-area {
   --curve-size: calc(2 * var(--radius-size));
   position: relative;
   display: flex;
+  margin: 0 1rem;
   align-items: center;
-  padding: 20px;
+  padding: 0.5rem;
   min-height: var(--curve-size);
 }
 nav.side-bar .logo-area img {
   position: relative;
-  max-width: 6rem;
+  max-width: 5rem;
   transition: 0.75s ease-out;
 }
 
@@ -127,12 +127,11 @@ nav.side-bar ul {
   font-size: 2rem;
   font-weight: bold;
   color: var(--bs-body-bg);
-  padding-left: 0.5rem;
   transition: 0.75s ease-out;
 }
 
 .divider {
-  width: 80%;
+  width: calc(100% - var(--radius-size));
   height: 3px;
   padding: 1px;
   margin: auto;

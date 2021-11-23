@@ -1,12 +1,10 @@
 <template>
-  <li @click="setActive()"  :class="{ active: categoryId == activeId }">
+  <li @click="setActive()" :class="{ active: categoryId == activeId }">
     <a href="#">
       <span class="icon">
-        <img :src="iconUrl">
+        <img :src="iconUrl" />
       </span>
-      <span class="title">{{
-        categoryName
-      }}</span>
+      <span class="title">{{ categoryName }}</span>
     </a>
   </li>
 </template>
@@ -19,24 +17,24 @@ export default {
     categoryName: String,
     activeId: Number,
     categoryId: Number,
-    iconUrl: String
+    iconUrl: String,
   },
 
   methods: {
     setActive() {
-      this.$emit('activeSetted', this.categoryId);
+      this.$emit("activeSetted", this.categoryId);
     },
-  }
+  },
 };
 </script>
 
 <style>
 nav.side-bar ul li {
   height: 5rem;
-  padding: 0.3rem 1.3rem;
+  padding: 0.3rem 1rem;
   list-style: none;
   border-radius: var(--radius-size);
-  margin: calc(var(--radius-size)/3) 0 ;
+  margin: calc(var(--radius-size) / 3) 0;
   z-index: 1;
 }
 nav.side-bar ul li:not(.active) {
@@ -87,27 +85,30 @@ nav.side-bar ul li a {
   gap: 0;
   align-items: center;
   text-decoration: none;
-  transition-duration: 0.1s;
+  transition-duration: 0.2s;
 }
 aside:hover nav.side-bar ul li a {
   gap: 10px;
 }
 nav.side-bar span {
   display: flex;
-  transition-duration: 0.75s cubic-bezier(0.39, 0.58, 0.57, 1);
+  transition: 0.75s;
 }
 nav.side-bar ul li a span.icon {
   margin-left: 0.5rem;
   font-size: 3rem;
 }
 nav.side-bar span.title {
-  max-width: 0;
+  width: 0rem;
   opacity: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 aside:hover nav.side-bar span.title {
-  width: auto;
-  max-width: 10rem;
+  width: 10rem;
   opacity: 1;
+  margin-left: 0.7rem;
 }
 
 .icon img {
@@ -120,6 +121,4 @@ aside:hover nav.side-bar span.title {
   padding: 0rem;
   border-radius: 30%;
 }
-
-
 </style>

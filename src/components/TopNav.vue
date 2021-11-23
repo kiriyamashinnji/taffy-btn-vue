@@ -1,10 +1,15 @@
 <template>
   <div>
     <div class="top-nav">
-      <a class="taffy-dir" href="http://space.bilibili.com/1265680561/"> </a>
-    </div>
+      <a href="http://space.bilibili.com/1265680561/" class="taffy-dir">
+        @永雏塔菲
+      </a>
 
-    <div class="divider" />
+      <div class="nav-custom">
+        <img src="../assets/volume.png" class="nav-settings" style="height: 2.7rem" />
+        <img src="../assets/language.png" class="nav-settings" style="height: 3rem" />
+      </div>
+    </div>
   </div>
 </template>
 
@@ -14,34 +19,31 @@ export default {};
 
 <style scoped>
 .top-nav {
-  height: 8rem;
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  justify-content: space-between;
 }
 
-.divider {
-  width: 97%;
-  height: 3px;
-  padding: 1px;
-  margin: auto;
-  background-color: var(--bs-primary);
-  border-radius: 3px;
+.nav-settings{
+    margin-right: 2rem;
 }
 
 .taffy-dir {
   color: var(--bs-primary);
   text-decoration: none;
-  font-size: 1.25rem;
-  width: 9rem;
-  height: 2.5rem;
+  font-size: 1.75rem;
   background: #ffe2df;
   margin-left: 2.5rem;
   text-align: center;
   display: flex;
+  padding: 0.3rem 0.8rem;
   flex-direction: column;
   flex-wrap: nowrap;
   align-content: center;
   align-items: center;
   justify-content: center;
-  border-radius: 10px;
+  border-radius: 15px;
   box-shadow: 1px 1px 6px #fd507e52;
 }
 </style>

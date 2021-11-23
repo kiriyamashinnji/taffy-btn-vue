@@ -10,12 +10,16 @@
       :sideBarToggled="sideBarToggled"
       :activeId="activeId"
     />
+    <Footer/>
+    <Widgets/>
   </div>
 </template>
 
 <script>
 import Main from "./components/Main.vue";
 import Nav from "./components/Nav.vue";
+import Footer from "./components/Footer.vue";
+import Widgets from "./components/Widgets.vue";
 import axios from "axios";
 
 export default {
@@ -24,7 +28,9 @@ export default {
   components: {
     Main,
     Nav,
-  },
+    Footer,
+    Widgets,
+},
 
   data: () => {
     return {
@@ -74,9 +80,10 @@ export default {
   --bs-btn-hover: #cf2f59;
   --side-padding: 10px;
   --radius-size: 25px;
+  --bs-secondary: #ffe2df;
 }
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
