@@ -1,6 +1,6 @@
 <template>
   <div class="footer">
-    <a href="javascript:;" class="contributors">关于及贡献人员</a>
+    <a href="javascript:;" @click="showContributors" class="contributors">关于及贡献人员</a>
     <p>
       本站为永雏塔菲粉丝作品，与
       <a
@@ -15,14 +15,20 @@
 </template>
 
 <script>
-export default {};
+export default {
+  methods: {
+    showContributors() {
+      this.$emit("showContributors");
+    }
+  }
+};
 </script>
 
 <style scoped>
 .contributors {
   font-weight: bold;
   text-decoration: none;
-  color: #000;
+  color: #002952;
 }
 
 .taffy-redir,
@@ -32,7 +38,7 @@ export default {};
   color: var(--bs-primary);
 }
 .footer {
-  padding-top: 0.5rem;
+  padding: 0.7rem 0;
   z-index: 0.5;
   font-size: 1rem;
   height: 6rem;

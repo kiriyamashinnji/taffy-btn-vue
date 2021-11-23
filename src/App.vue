@@ -1,17 +1,21 @@
 <template>
   <div>
-    <Nav 
-      :btnOverview="btnOverview" 
+    <Nav
+      :btnOverview="btnOverview"
       @sideBarToggled="toggleSideBar"
-      @activeSetted="setActive"  
+      @activeSetted="setActive"
     />
-    <Main 
-      :btnOverview="btnOverview" 
+    <Main
+      :btnOverview="btnOverview"
       :sideBarToggled="sideBarToggled"
       :activeId="activeId"
     />
-    <Footer/>
-    <Widgets/>
+    <Footer @showContributors="showContributors" />
+    <Widgets />
+
+    <transition name="modal">
+      <Contributors v-if="contributorsShown" @close="closeContributors" />
+    </transition>
   </div>
 </template>
 
@@ -20,6 +24,7 @@ import Main from "./components/Main.vue";
 import Nav from "./components/Nav.vue";
 import Footer from "./components/Footer.vue";
 import Widgets from "./components/Widgets.vue";
+import Contributors from "./components/Contributors.vue";
 import axios from "axios";
 
 export default {
@@ -30,7 +35,8 @@ export default {
     Nav,
     Footer,
     Widgets,
-},
+    Contributors,
+  },
 
   data: () => {
     return {
@@ -39,6 +45,7 @@ export default {
       error: null,
       sideBarToggled: false,
       activeId: 0,
+      contributorsShown: false,
     };
   },
 
@@ -68,6 +75,12 @@ export default {
         .catch((error) => {
           this.error = error;
         });
+    },
+    closeContributors() {
+      this.contributorsShown = false;
+    },
+    showContributors() {
+      this.contributorsShown = true;
     },
   },
 };
