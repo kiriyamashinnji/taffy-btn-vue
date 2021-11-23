@@ -52,7 +52,7 @@ nav.side-bar ul li.active {
 
 li.active > a {
   color: var(--bs-primary) !important;
-  transition: all 0.1s;
+  transition: all 0.1s ease-in-out;
 }
 
 nav.side-bar ul li.active::before,
@@ -92,7 +92,7 @@ aside:hover nav.side-bar ul li a {
 }
 nav.side-bar span {
   display: flex;
-  transition: 0.75s;
+  transition: 0.75s ease-out;
 }
 nav.side-bar ul li a span.icon {
   margin-left: 0.5rem;

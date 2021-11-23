@@ -34,13 +34,13 @@ export default {
 
 <style scoped>
 .main {
-  margin-left: 18.3rem;
-  transition: 0.5s linear;
+  margin-left: 20rem;
+  transition: 0.65s cubic-bezier(0.2, 0.39, 0.66, 0.74);
 }
 
 .main.active  {
-  transition: 0.75s ease-out;
-  margin-left: 8.5rem;
+  transition: 0.75s cubic-bezier(0.24, 0.3, 0.59, 0.98);
+  margin-left: 9rem;
 }
 
 .divider {
