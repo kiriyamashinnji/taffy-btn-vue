@@ -1,20 +1,21 @@
 <template>
   <div>
     <Nav
-      :btnOverview="btnOverview"
-      @sideBarToggled="toggleSideBar"
-      @activeSetted="setActive"
+        :btnOverview="btnOverview"
+        @sideBarToggled="toggleSideBar"
+        @activeSetted="setActive"
     />
     <Main
-      :btnOverview="btnOverview"
-      :sideBarToggled="sideBarToggled"
-      :activeId="activeId"
+        :btnOverview="btnOverview"
+        :sideBarToggled="sideBarToggled"
+        :activeId="activeId"
     />
-    <Footer @showContributors="showContributors" />
-    <Widgets />
+
+    <Footer @showContributors="showContributors"/>
+    <Widgets/>
 
     <transition name="modal">
-      <Contributors v-if="contributorsShown" @close="closeContributors" />
+      <Contributors v-if="contributorsShown" @close="closeContributors"/>
     </transition>
   </div>
 </template>
@@ -41,7 +42,18 @@ export default {
   data: () => {
     return {
       loading: false,
-      btnOverview: null,
+      btnOverview: [
+        {
+          "button_list": [
+            {
+              "voice_name": "",
+              "voice_url": ""
+            },
+          ],
+          "button_classification": "",
+          "icon_url": ""
+        },
+      ],
       error: null,
       sideBarToggled: false,
       activeId: 0,
@@ -65,16 +77,16 @@ export default {
       this.error = null;
 
       axios
-        .get("http://117.50.163.143/taffy-btn-api/get-overview", {
-          mode: "no-cors",
-        })
-        .then((response) => {
-          this.loading = false;
-          this.btnOverview = response.data.data;
-        })
-        .catch((error) => {
-          this.error = error;
-        });
+          .get("http://117.50.163.143/taffy-btn-api/get-overview", {
+            mode: "no-cors",
+          })
+          .then((response) => {
+            this.loading = false;
+            this.btnOverview = response.data.data;
+          })
+          .catch((error) => {
+            this.error = error;
+          });
     },
     closeContributors() {
       this.contributorsShown = false;
@@ -95,6 +107,7 @@ export default {
   --radius-size: 25px;
   --bs-secondary: #ffe2df;
 }
+
 #app {
   /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
