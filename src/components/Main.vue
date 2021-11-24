@@ -64,10 +64,11 @@ export default {
       }
 
       if (!this.overlap) {
-        this.pause();
+        this.playList.forEach((audio) => {
+          audio.pause();
+        });
         this.playList = [];
       }
-      this.paused = false;
       let audio = new Audio(url);
       audio.player = this;
       audio.onended = audioEnd;

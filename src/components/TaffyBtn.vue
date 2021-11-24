@@ -37,7 +37,7 @@ export default {
   },
 
   mounted() {
-    this.width =String(this.$refs.el.clientWidth) + 'px';
+    this.width = String(this.$refs.el.clientWidth) + "px";
     this.duration = String(this.btn.voice_length) + 's';
   },
 
@@ -53,6 +53,7 @@ export default {
   methods: {
     onClick: function () {
       this.$emit("play", this.btn.voice_url);
+      this.active = false;
     },
   },
 };
@@ -145,21 +146,26 @@ div {
 }
 
 .progress-bar {
-    position: absolute;
-    top: 0.7rem;
-    left: 1rem;
-    width: 5px;
-    height: 5px;
-    background-color: black;
-    visibility: hidden;
-    transition-duration: 0s;
+  position: absolute;
+  top: 0.7rem;
+  left: 1rem;
+  width: 5px;
+  height: 5px;
+  background-color: black;
+  visibility: hidden;
+  transition-duration: 0s;
 }
 
 .progress-bar.active {
-    visibility: visible;
-    float: left;
-    transform: translateX(v-bind(width));
-    transition: v-bind(duration) linear;
+  visibility: visible;
+  float: left;
+  animation: mymove v-bind(duration) linear forwards;
+}
+
+
+@keyframes mymove {
+  from {left: 1rem;}
+  to {left: calc(1rem + v-bind(width)); }
 }
 
 .btn-warper {
