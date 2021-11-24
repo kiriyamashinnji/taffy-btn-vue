@@ -46,4 +46,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
   - [x] Playback bars.
   - [x] Better animation.
 
-- [ ] Need to fetch some resources in advance such as `fyy-play.png` and `fyy-pause.png`
+- [ ] Need to fetch some resources in advance such as `fyy-play.png` and `fyy-pause.png` 
