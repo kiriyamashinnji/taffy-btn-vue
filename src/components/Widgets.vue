@@ -33,10 +33,10 @@ export default {
       isFolded: "folded",
 
       widgetSrcs: [
-        ["pause", "continue"],
-        ["no-overlap", "overlap"],
-        ["no-loop", "loop", "random"],
-        ["help-me-to-choose"],
+        ["pause.svg", "continue.svg"],
+        ["no-overlap.svg", "overlap.svg"],
+        ["no-loop.svg", "loop.svg", "random.svg"],
+        ["help-me-to-choose.svg"],
       ],
       widgetTexts: [
         ["暂停播放", "继续播放"],
@@ -45,9 +45,9 @@ export default {
         ["随机播放"],
       ],
 
-      mode: 'no-loop',
+      mode: "no-loop",
       overlap: false,
-      paused: false
+      paused: false,
     };
   },
   methods: {
@@ -61,22 +61,22 @@ export default {
       switch (index[0]) {
         case 1:
           this.paused = !this.paused;
-          if(this.paused) {
-            this.$emit('pause');
+          if (this.paused) {
+            this.$emit("pause");
           } else {
-            this.$emit('_continue');
+            this.$emit("_continue");
           }
           break;
         case 2:
           this.overlap = index[1] === 1;
-          this.$emit('setMode', this.mode, this.overlap);
+          this.$emit("setMode", this.mode, this.overlap);
           break;
         case 3:
-          this.mode = this.widgetSrcs[2][index[1]];
-          this.$emit('setMode', this.mode, this.overlap);
+          this.mode = this.widgetSrcs[2][index[1]].slice(0, -4);
+          this.$emit("setMode", this.mode, this.overlap);
           break;
         case 4:
-          this.$emit('playRandom');
+          this.$emit("playRandom");
           break;
       }
     },
@@ -170,9 +170,9 @@ export default {
 }
 
 .leaf-content.l-4 {
-  bottom: 7rem;
-  right: 4.1rem;
-  width: 2.4rem;
+  bottom: 7.1rem;
+  right: 4.46rem;
+  width: 2.2rem;
   transition: 0.24s linear;
   transform: translateY(-24rem) rotate(30deg);
 }

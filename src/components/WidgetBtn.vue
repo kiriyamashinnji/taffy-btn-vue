@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     getImgUrl(src) {
-      return require("../assets/" + src+'.svg');
+      return require("../assets/" + src);
     },
     toggle() {
       this.index += 1;

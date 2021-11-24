@@ -1,40 +1,58 @@
 <template>
-  <div class="tf-btn">
-    <div class="tf-btn-content" v-on:click="onClick()">
-      {{ btn.voice_name }}
+  <div class="btn-warper">
+    <div class="tf-btn" ref="el">
+      <div class="tf-btn-content" v-on:click="onClick()">
+        {{ btn.voice_name }}
+      </div>
+      <img
+        src="../assets/four-leafed-clover.svg"
+        class="tf-btn-icon"
+        :class="classObject"
+      />
     </div>
-    <img src="../assets/four-leafed-clover.svg" 
-    class="tf-btn-icon"
-    :class="classObject" />
+    <div class="progress-bar" :class="classObject"></div>
   </div>
 </template>
 
 <script>
+import { ref } from "@vue/reactivity";
+
 export default {
   name: "TaffyBtn",
+  setup() {
+    const el = ref(null);
+  },
 
   props: {
     btn: Object,
     playUrlList: Object,
-    isPaused: Boolean
+    isPaused: Boolean,
   },
 
   data: () => {
-    return {};
+    return {
+      width: 0,
+      duration: 0,
+    };
+  },
+
+  mounted() {
+    this.width =String(this.$refs.el.clientWidth) + 'px';
+    this.duration = String(this.btn.voice_length) + 's';
   },
 
   computed: {
     classObject() {
       return {
         paused: this.isPaused,
-        active: this.playUrlList.indexOf(this.btn.voice_url) > -1
+        active: this.playUrlList.indexOf(this.btn.voice_url) > -1,
       };
-    }
+    },
   },
 
   methods: {
     onClick: function () {
-      this.$emit('play', this.btn.voice_url);
+      this.$emit("play", this.btn.voice_url);
     },
   },
 };
@@ -124,5 +142,30 @@ div {
 .tf-btn:active:before {
   -webkit-transform: scale(1.5, 3);
   transform: scale(1.5, 3);
+}
+
+.progress-bar {
+    position: absolute;
+    top: 0.7rem;
+    left: 1rem;
+    width: 5px;
+    height: 5px;
+    background-color: black;
+    visibility: hidden;
+    transition-duration: 0s;
+}
+
+.progress-bar.active {
+    visibility: visible;
+    float: left;
+    transform: translateX(v-bind(width));
+    transition: v-bind(duration) linear;
+}
+
+.btn-warper {
+  position: relative;
+  display: inline-flex;
+  justify-content: center;
+  align-content: center;
 }
 </style>
