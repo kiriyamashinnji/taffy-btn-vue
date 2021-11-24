@@ -1,20 +1,20 @@
 <template>
   <div v-if="!loading">
     <Nav
-        :btnOverview="btnOverview"
-        @sideBarToggled="toggleSideBar"
-        @activeSetted="setActive"
+      :btnOverview="btnOverview"
+      @sideBarToggled="toggleSideBar"
+      @activeSetted="setActive"
     />
     <Main
-        :btnOverview="btnOverview"
-        :sideBarToggled="sideBarToggled"
-        :activeId="activeId"
+      :btnOverview="btnOverview"
+      :sideBarToggled="sideBarToggled"
+      :activeId="activeId"
     />
 
-    <Footer @showContributors="showContributors"/>
+    <Footer @showContributors="showContributors" />
 
     <transition name="modal">
-      <Contributors v-if="contributorsShown" @close="closeContributors"/>
+      <Contributors v-if="contributorsShown" @close="closeContributors" />
     </transition>
   </div>
 </template>
@@ -41,14 +41,14 @@ export default {
       loading: false,
       btnOverview: [
         {
-          "button_list": [
+          button_list: [
             {
-              "voice_name": "",
-              "voice_url": ""
+              voice_name: "",
+              voice_url: "",
             },
           ],
-          "button_classification": "",
-          "icon_url": ""
+          button_classification: "",
+          icon_url: "",
         },
       ],
       error: null,
@@ -74,16 +74,16 @@ export default {
       this.error = null;
 
       axios
-          .get("http://117.50.163.143/taffy-btn-api/get-overview", {
-            mode: "no-cors",
-          })
-          .then((response) => {
-            this.loading = false;
-            this.btnOverview = response.data.data;
-          })
-          .catch((error) => {
-            this.error = error;
-          });
+        .get("http://117.50.163.143/taffy-btn-api/get-overview", {
+          mode: "no-cors",
+        })
+        .then((response) => {
+          this.loading = false;
+          this.btnOverview = response.data.data;
+        })
+        .catch((error) => {
+          this.error = error;
+        });
     },
     closeContributors() {
       this.contributorsShown = false;

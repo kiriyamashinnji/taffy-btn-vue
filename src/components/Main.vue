@@ -170,6 +170,6 @@ function randInt(l, h) {
 }
 
 .btn-group {
-  margin: 1.5rem 2.8rem;
+  margin: 1.5rem 8rem 10rem 2.8rem;
 }
 </style>

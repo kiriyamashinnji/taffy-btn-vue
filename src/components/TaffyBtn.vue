@@ -147,11 +147,13 @@ div {
 
 .progress-bar {
   position: absolute;
-  top: 0.7rem;
-  left: 1rem;
-  width: 5px;
-  height: 5px;
-  background-color: black;
+  top: -2rem;
+  width: 60px;
+  height: 60px;
+  background-image: url(../assets/fyy-play.png);
+    background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover; /* Resize the background image to cover the entire container */
   visibility: hidden;
   transition-duration: 0s;
 }
@@ -161,11 +163,24 @@ div {
   float: left;
   animation: mymove v-bind(duration) linear forwards;
 }
-
-
+.progress-bar.active.paused {
+  background-image: url(../assets/fyy-pause.png);
+}
 @keyframes mymove {
-  from {left: 1rem;}
-  to {left: calc(1rem + v-bind(width)); }
+  0% {
+    left: 0rem;
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    left: calc(v-bind(width));
+    opacity: 0;
+  }
 }
 
 .btn-warper {

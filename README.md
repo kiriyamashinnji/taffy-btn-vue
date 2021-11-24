@@ -24,8 +24,7 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 ## TODOs.
-.
-- [ ] basic layouts.
+- [x] basic layouts.
   - [x] Sidebar.
   - [x] Topnavbar.
   - [x] Footer.
@@ -39,10 +38,12 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [x] Footer.
   - [x] Contents in the jq version.
   - [x] Float .
-- [ ] Player.
+- [x] Player.
   - [x] Contents in the jq version.
-  - [ ] Better icons.
-- [ ] Buttons.
+  - [x] Better icons.
+- [x] Buttons.
   - [x] Contents in the jq version.
-  - [ ] Playback bars.
-  - [ ] Better animation.
+  - [x] Playback bars.
+  - [x] Better animation.
+
+- [ ] Need to fetch some resources in advance such as `fyy-play.png` and `fyy-pause.png`
