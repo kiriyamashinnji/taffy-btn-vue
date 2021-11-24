@@ -1,28 +1,60 @@
 <template>
-  <Nav :btnOverview="btnOverview" :sideBarWidth="sideBarWidth"></Nav>
-  <Main :btnOverview="btnOverview" :sideBarWidth="sideBarWidth"></Main>
+  <div v-if="!loading">
+    <Nav
+      :btnOverview="btnOverview"
+      @sideBarToggled="toggleSideBar"
+      @activeSetted="setActive"
+    />
+    <Main
+      :btnOverview="btnOverview"
+      :sideBarToggled="sideBarToggled"
+      :activeId="activeId"
+    />
+
+    <Footer @showContributors="showContributors" />
+
+    <transition name="modal">
+      <Contributors v-if="contributorsShown" @close="closeContributors" />
+    </transition>
+  </div>
 </template>
 
 <script>
 import Main from "./components/Main.vue";
 import Nav from "./components/Nav.vue";
+import Footer from "./components/Footer.vue";
+import Contributors from "./components/Contributors.vue";
 import axios from "axios";
 
 export default {
   name: "App",
 
   components: {
+    Main,
     Nav,
-    Main
+    Footer,
+    Contributors,
   },
 
   data: () => {
     return {
       loading: false,
-      btnOverview: null,
+      btnOverview: [
+        {
+          button_list: [
+            {
+              voice_name: "",
+              voice_url: "",
+            },
+          ],
+          button_classification: "",
+          icon_url: "",
+        },
+      ],
       error: null,
-
-      sideBarWidth:'18rem',
+      sideBarToggled: false,
+      activeId: 0,
+      contributorsShown: false,
     };
   },
 
@@ -31,8 +63,14 @@ export default {
   },
 
   methods: {
+    toggleSideBar(x) {
+      this.sideBarToggled = x;
+    },
+    setActive(id) {
+      this.activeId = id;
+    },
     fetchData() {
-      this.isloading = true;
+      this.loading = true;
       this.error = null;
 
       axios
@@ -47,24 +85,36 @@ export default {
           this.error = error;
         });
     },
+    closeContributors() {
+      this.contributorsShown = false;
+    },
+    showContributors() {
+      this.contributorsShown = true;
+    },
   },
 };
 </script>
 
 <style>
-html {
+:root {
   --bs-primary: #fd507e;
   --bs-body-bg: #fffffa;
   --bs-btn-hover: #cf2f59;
-
+  --side-padding: 10px;
+  --radius-size: 25px;
+  --bs-secondary: #ffe2df;
 }
+
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  /* font-family: Avenir, Helvetica, Arial, sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
-  background-color: var(--bs-body-bg);  
+  margin-top: 0;
+}
+
+html {
+  background-color: var(--bs-body-bg);
 }
 </style>
