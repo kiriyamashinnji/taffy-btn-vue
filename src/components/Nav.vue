@@ -1,8 +1,5 @@
 <template>
   <div>
-    <!-- Btn category selection for mobile -->
-
-    <!-- Btn category selection for pc or taplate-->
     <aside
       class="side-bar-wrap"
       ref="sideBar"

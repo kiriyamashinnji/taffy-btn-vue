@@ -10,6 +10,8 @@
       </div>
 
       <div class="nav-custom">
+        <router-link to="compose">编曲</router-link>
+
         <img
           src="../assets/volume.png"
           class="nav-settings"
