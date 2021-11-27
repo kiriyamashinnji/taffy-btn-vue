@@ -10,8 +10,6 @@
       </div>
 
       <div class="nav-custom">
-        <router-link to="compose">编曲</router-link>
-
         <img
           src="../assets/volume.png"
           class="nav-settings"
@@ -24,6 +22,7 @@
         />
       </div>
     </div>
+    <div class="divider" />
   </div>
 </template>
 
@@ -76,4 +75,15 @@ export default {};
   align-items: center;
   justify-content: center;
 }
+
+.divider {
+  width: calc(100% - 2 * var(--radius-size));
+  height: 3px;
+  padding: 1px;
+  margin: auto;
+  margin-top: 0.5rem;
+  background-color: var(--bs-primary);
+  border-radius: 3px;
+}
+
 </style>

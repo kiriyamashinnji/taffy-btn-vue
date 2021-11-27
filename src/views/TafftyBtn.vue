@@ -5,35 +5,37 @@
       @sideBarToggled="toggleSideBar"
       @activeSetted="setActive"
     />
-    <Main
-      :btnOverview="btnOverview"
-      :sideBarToggled="sideBarToggled"
-      :activeId="activeId"
-      :useWidgets="true"
-    />
+    <MainContainer :sideBarToggled="sideBarToggled">
+      <TopNav></TopNav>
+      <MainBtn :btnOverview="btnOverview" :activeId="activeId"></MainBtn>
+    </MainContainer>
     <Footer @showContributors="showContributors" />
 
     <transition name="modal">
-      <Contributors v-if="contributorsShown" @close="closeContributors" />
+      <Acknowledgement v-if="contributorsShown" @close="closeContributors" />
     </transition>
   </div>
 </template>
 
 <script>
-import Main from "../components/Main.vue";
+import TopNav from "../components/TopNav.vue";
+import MainContainer from "../components/MainContainer.vue";
 import Nav from "../components/Nav.vue";
 import Footer from "../components/Footer.vue";
-import Contributors from "../components/Contributors.vue";
+import Acknowledgement from "../components/Acknowledgement.vue";
+import MainBtn from "../components/MainBtn.vue";
 import axios from "axios";
 
 export default {
   name: "App",
 
   components: {
-    Main,
+    TopNav,
     Nav,
     Footer,
-    Contributors,
+    Acknowledgement,
+    MainContainer,
+    MainBtn
   },
 
   data: () => {
@@ -94,4 +96,3 @@ export default {
   },
 };
 </script>
-
