@@ -237,4 +237,105 @@ export default {
   transition: 0.06s linear;
   transform: translateY(-6rem);
 }
+
+@media (max-width: 767px) {
+  .control-leaf {
+    bottom: 4rem;
+    width: 3rem;
+    right: 2rem;
+  }
+
+  .expanded-leaf {
+    bottom: 4rem;
+    right: 2rem;
+    width: 3rem;
+  }
+
+  .expanded-leaf.l-1 {
+    transition: 0.06s linear;
+    transform: translateY(-5rem) rotate(30deg);
+  }
+
+  .expanded-leaf.l-2 {
+    transition: 0.12s linear;
+    transform: translateY(-10rem) rotate(30deg);
+  }
+
+  .expanded-leaf.l-3 {
+    transition: 0.18s linear;
+    transform: translateY(-15rem) rotate(30deg);
+  }
+
+  .expanded-leaf.l-4 {
+    transition: 0.24s linear;
+    transform: translateY(-20rem) rotate(30deg);
+  }
+
+  .leaf-content {
+    bottom: 2rem;
+  }
+
+  .leaf-content.l-4 {
+    bottom: 4.71rem;
+    width: 1.45rem;
+    right: 2.25rem;
+    transform: translateY(-20rem) rotate(30deg);
+  }
+
+  .leaf-content.l-3 {
+    bottom: 4.71rem;
+    width: 1.75rem;
+    right: 2.16rem;
+    transform: translateY(-15rem) rotate(30deg);
+  }
+
+  .leaf-content.l-2 {
+    bottom: 4.83rem;
+    width: 1.79rem;
+    right: 2.13rem;
+    transform: translateY(-10rem) rotate(30deg);
+  }
+
+  .leaf-content.l-1 {
+    bottom: 4.73rem;
+    width: 1.79rem;
+    right: 2.13rem;
+    transform: translateY(-5rem) rotate(30deg);
+  }
+
+.leaf-description {
+    font-size: 0.2em;
+    border-radius: 2px;
+    padding: 0.1rem 0.2rem;
+    bottom: 2.9rem;
+    right: 0.9rem;
+  background: rgba(97, 97, 97, 0.56);
+
+}
+
+  .leaf-description.unfolded {
+    opacity: 0;
+    transform: translateY(0) !important;
+  }
+
+  .leaf-description.l-4 {
+    transition: 0.24s linear;
+    transform: translateY(-20rem);
+  }
+
+  .leaf-description.l-3 {
+    transition: 0.18s linear;
+    transform: translateY(-15rem);
+  }
+
+  .leaf-description.l-2 {
+    transition: 0.12s linear;
+    transform: translateY(-10rem);
+  }
+
+  .leaf-description.l-1 {
+    transition: 0.06s linear;
+    transform: translateY(-5rem);
+  }
+}
 </style>

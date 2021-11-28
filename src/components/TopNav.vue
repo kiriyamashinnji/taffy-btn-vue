@@ -1,8 +1,8 @@
 <template>
   <div>
     <div class="top-nav">
-      <div style="display: flex; align-content: center;align-items: center;">
-        <div class="title" >雏按钮</div>
+      <div style="display: flex; align-content: center; align-items: center">
+        <div class="title">雏按钮</div>
 
         <a href="http://space.bilibili.com/1265680561/" class="taffy-dir">
           @永雏塔菲
@@ -10,11 +10,6 @@
       </div>
 
       <div class="nav-custom">
-        <img
-          src="../assets/volume.png"
-          class="nav-settings"
-          style="height: 2.7rem"
-        />
         <img
           src="../assets/language.png"
           class="nav-settings"
@@ -36,6 +31,7 @@ export default {};
   align-items: center;
   height: 5rem;
   justify-content: space-between;
+  background-color: var(--bs-body-bg);
 }
 
 .nav-settings {
@@ -86,4 +82,34 @@ export default {};
   border-radius: 3px;
 }
 
+@media (max-width: 767px) {
+  .title {
+    font-size: 1.8rem;
+    margin-left: 1rem;
+    font-weight: auto;
+  }
+
+  .taffy-dir {
+    font-size: 1.1rem;
+    margin-left: 0.7rem;
+    padding: 0.2rem 0.4rem;
+    border-radius: 10px;
+  }
+  .top-nav {
+    height: 3rem;
+  }
+
+  .nav-settings {
+    margin-right: 1rem;
+  }
+  .divider {
+    width: 95%;
+    height: 1px;
+    padding: 1px;
+    margin: auto;
+    margin-top: 0.5rem;
+    background-color: var(--bs-primary);
+    border-radius: 3px;
+  }
+}
 </style>

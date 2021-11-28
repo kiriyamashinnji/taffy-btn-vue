@@ -48,4 +48,10 @@ export default {
   width: 100%;
   background-color: var(--bs-secondary);
 }
+
+@media (max-width: 767px) {
+  .footer {
+    visibility: hidden;
+  }
+}
 </style>

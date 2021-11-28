@@ -15,7 +15,7 @@ export default {
 </script>
 
 <style scoped>
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
   .main-container {
     margin-left: 0 !important;
   }

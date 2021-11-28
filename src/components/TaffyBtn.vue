@@ -38,7 +38,7 @@ export default {
 
   mounted() {
     this.width = String(this.$refs.el.clientWidth) + "px";
-    this.duration = String(this.btn.voice_length) + 's';
+    this.duration = String(this.btn.voice_length) + "s";
   },
 
   computed: {
@@ -151,7 +151,7 @@ div {
   width: 60px;
   height: 60px;
   background-image: url(../assets/fyy-play.png);
-    background-position: center; /* Center the image */
+  background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
   background-size: cover; /* Resize the background image to cover the entire container */
   visibility: hidden;
@@ -188,5 +188,46 @@ div {
   display: inline-flex;
   justify-content: center;
   align-content: center;
+}
+
+@media (max-width: 767px) {
+  .tf-btn {
+    margin: 0.5rem 0.6rem;
+    font-size: 0.9rem;
+    padding: 0.15rem 0.3rem 0.15rem 0.6rem;
+  }
+  .tf-btn-icon {
+    height: 1.15rem;
+    margin-left: 0.2rem;
+  }
+  .tf-btn-content {
+    min-height: 1.3rem;
+  }
+  .progress-bar {
+    top: -1.5rem;
+    width: 40px;
+    height: 40px;
+  }
+
+  .progress-bar.active {
+    animation: mymove1 v-bind(duration) linear forwards;
+  }
+ 
+  @keyframes mymove1 {
+    0% {
+      left: -0.5rem;
+      opacity: 0;
+    }
+    5% {
+      opacity: 1;
+    }
+    95% {
+      opacity: 1;
+    }
+    100% {
+      left: calc(v-bind(width) - 1rem);
+      opacity: 0;
+    }
+  }
 }
 </style>

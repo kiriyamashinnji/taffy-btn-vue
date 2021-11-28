@@ -14,6 +14,12 @@
   --bs-secondary: #ffe2df;
 }
 
+@media (max-width: 767px) {
+  :root {
+    --bs-body-bg: #fffbf0;
+ }
+}
+
 #app {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

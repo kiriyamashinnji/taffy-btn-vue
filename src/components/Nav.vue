@@ -81,6 +81,12 @@ aside.side-bar-wrap {
   overflow-x: hidden;
 }
 
+@media (max-width: 767px) {
+  aside.side-bar-wrap {
+    display: none;
+  }
+}
+
 nav.side-bar {
   min-height: 100%;
   background-color: var(--bs-primary);

@@ -1,12 +1,23 @@
 <template>
   <div>
     <TaffyBtnGroup
+      v-if="width >= 768"
       id="btn-group"
       :btns="btnOverview[activeId]"
       :playUrlList="playUrlList"
       :isPaused="paused"
       @play="play"
     />
+
+    <TaffyBtnGroups
+      v-if="width < 768"
+      id="btn-group"
+      :overView="btnOverview"
+      :playUrlList="playUrlList"
+      :isPaused="paused"
+      @play="play"
+    />
+
 
     <Widgets
       @pause="pause"
@@ -20,13 +31,22 @@
 <script>
 import TaffyBtnGroup from "./TaffyBtnGroup.vue";
 import Widgets from "./Widgets.vue";
+import TaffyBtnGroups from "./TaffyBtnGroups.vue";
+import { useWindowSize } from "@vueuse/core";
 
 export default {
   name: "Main",
   components: {
     TaffyBtnGroup,
+    TaffyBtnGroups,
     Widgets,
   },
+
+  setup() {
+    const { width, height } = useWindowSize();
+    return { width, height };
+  },
+
   data: () => {
     return {
       init: false,
@@ -40,11 +60,11 @@ export default {
     };
   },
 
-  mounted() {},
-
   props: {
     btnOverview: Object,
     activeId: Number,
+    windowWidth: Number,
+    windowHeight: Number,
   },
 
   methods: {
@@ -146,5 +166,11 @@ function randInt(l, h) {
 <style scoped>
 .btn-group {
   margin: 1.5rem 8rem 10rem 2.8rem;
+}
+
+@media (max-width: 767px) {
+  #btn-group {
+    margin: 1rem 0.5rem 7rem 0.5rem;
+  }
 }
 </style>
