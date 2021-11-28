@@ -11,7 +11,7 @@
       <TaffyBtnGroup
         :btns="btns"
         :playUrlList="playUrlList"
-        :isPaused="paused"
+        :isPaused="isPaused"
         @play="onPlay"
       />
     </div>
