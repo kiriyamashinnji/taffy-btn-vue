@@ -38,18 +38,30 @@
 export default {
   props: {
     classification: String,
+    voiceName: String,
+  },
+
+  setup(props) {
+    const { voiceName } = props;
+
+    return {
+      title: voiceName,
+    };
   },
 
   methods: {
     submit() {
-      this.$emit('submit', {
+      this.$emit("submit", {
         title: this.title,
         name_: this.name_,
       });
     },
     cancel(e) {
-      if (e.target.className === "modal" || e.target.className === "form-cancel") {
-        console.log('cancel');
+      if (
+        e.target.className === "modal" ||
+        e.target.className === "form-cancel"
+      ) {
+        console.log("cancel");
         this.$emit("cancel");
       }
     },
@@ -57,7 +69,6 @@ export default {
 
   data() {
     return {
-      title: "",
       name_: "",
     };
   },

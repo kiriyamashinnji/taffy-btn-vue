@@ -24,6 +24,7 @@
       <UploadPage
         v-if="isUploaded"
         :classification="classification"
+        :voiceName="voiceName"
         @submit="uploadVoice"
         @cancel="cancelSubmit"
       />
@@ -93,6 +94,9 @@ export default {
     isUploaded() {
       return this.file.length > 0;
     },
+    voiceName() {
+      return this.file[0].name.replace(/\.[^/.]+$/, "");
+    },
   },
 
   methods: {
@@ -127,7 +131,7 @@ export default {
           console.log(res);
         })
         .catch((err) => {
-          console.log(err);
+          alert(err);
         });
     },
 
