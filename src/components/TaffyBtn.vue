@@ -1,7 +1,7 @@
 <template>
   <div class="btn-warper">
-    <div class="tf-btn" ref="el">
-      <div class="tf-btn-content" v-on:click="onClick()">
+    <div class="tf-btn" ref="el" v-on:click="onClick()">
+      <div class="tf-btn-content">
         {{ btn.voice_name }}
       </div>
       <img
@@ -225,7 +225,7 @@ div {
       opacity: 1;
     }
     100% {
-      left: calc(v-bind(width) - 1rem);
+      left: calc(v-bind(width));
       opacity: 0;
     }
   }

@@ -41,7 +41,7 @@ export default {
     TaffyBtnGroups,
     Widgets,
   },
-
+  
   setup() {
     const { width, height } = useWindowSize();
     return { width, height };
@@ -87,19 +87,12 @@ export default {
       let audio = new Audio(url);
       audio.player = this;
       audio.onended = audioEnd;
-      this.playList.push(audio);
       audio.loop = this.loop;
       audio.play();
 
       audio.url = url;
-      this.generatePlayUrlList();
-    },
 
-    generatePlayUrlList: function () {
-      this.playUrlList = [];
-      for (let i = 0; i < this.playList.length; i++) {
-        this.playUrlList.push(this.playList[i].url);
-      }
+      audio.onplay = ()=>{onAddUrl(this, audio)};
     },
 
     pause: function () {
@@ -141,13 +134,13 @@ export default {
         } else newPlayList.push(sound);
       });
       this.playList = newPlayList;
-      this.generatePlayUrlList();
+      generatePlayUrlList(this);
     },
 
     playRandom: function () {
       let idx = randInt(0, this.soundList.length - 1);
       this.play(this.soundList[idx]);
-      this.generatePlayUrlList();
+      generatePlayUrlList(this);
     },
   },
 };
@@ -160,6 +153,18 @@ function audioEnd() {
 
 function randInt(l, h) {
   return Math.floor(Math.random() * (h - l + 1)) + l;
+}
+
+function onAddUrl(comp, audio) {
+  comp.playList.push(audio);
+  generatePlayUrlList(comp);
+}
+
+function generatePlayUrlList(comp) {
+  comp.playUrlList = [];
+  for (let i = 0; i < comp.playList.length; i++) {
+    comp.playUrlList.push(comp.playList[i].url);
+  }
 }
 </script>
 

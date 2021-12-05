@@ -6,7 +6,7 @@
       <h2 style="margin-top: 0rem">关于</h2>
       <div>
         <h3>后端</h3>
-        永雏史莱姆懒狗
+        AceRetro
         <h3>前端</h3>
         永雏史莱姆懒狗
         <br />
