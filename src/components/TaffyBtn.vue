@@ -68,6 +68,7 @@ div {
   height: 1.5rem;
   margin-left: 0.5rem;
 }
+
 .tf-btn-icon.active {
   -webkit-animation: spin 1s linear infinite;
   -moz-animation: spin 1s linear infinite;
@@ -82,6 +83,7 @@ div {
 .tf-btn-content {
   min-height: 1.8rem;
 }
+
 .tf-btn {
   position: relative;
   display: inline-flex;
@@ -133,11 +135,13 @@ div {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
+
 .tf-btn:hover,
 .tf-btn:focus,
 .tf-btn:active {
   color: white;
 }
+
 .tf-btn:hover:before,
 .tf-btn:focus:before,
 .tf-btn:active:before {
@@ -163,9 +167,11 @@ div {
   float: left;
   animation: mymove v-bind(duration) linear forwards;
 }
+
 .progress-bar.active.paused {
   background-image: url(../assets/fyy-pause.png);
 }
+
 @keyframes mymove {
   0% {
     left: 0rem;
@@ -178,7 +184,7 @@ div {
     opacity: 1;
   }
   100% {
-    left: calc(v-bind(width));
+    left: v-bind(width);
     opacity: 0;
   }
 }
@@ -225,7 +231,7 @@ div {
       opacity: 1;
     }
     100% {
-      left: calc(v-bind(width));
+      left: v-bind(width);
       opacity: 0;
     }
   }

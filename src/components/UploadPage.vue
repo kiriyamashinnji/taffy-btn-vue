@@ -95,6 +95,7 @@ export default {
   border: 1px solid rgba(0, 0, 0, 0.5);
   width: 25rem; /* Could be more or less, depending on screen size */
   border-radius: 0.5rem;
+  background: center / cover  url(../assets/modalback.png);
 }
 
 .modal-header {
