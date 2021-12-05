@@ -7,16 +7,20 @@
     :isPaused="isPaused"
     :playUrlList="playUrlList"
     @play="onPlay"/>
+
+    <TaffyBtnUpload :classification="btns.button_classification" />
   </div>
 </template>
 
 <script>
 import TaffyBtn from "./TaffyBtn.vue";
+import TaffyBtnUpload from "./TaffyBtnUpload.vue";
 
 export default {
   name: "TaffyBtnGroup",
   components: {
     TaffyBtn,
+    TaffyBtnUpload
   },
   props: {
     btns: Object,
@@ -37,5 +41,6 @@ export default {
 <style>
 .btn-group {
   text-align: left;
+  
 }
 </style>

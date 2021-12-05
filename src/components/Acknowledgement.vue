@@ -58,7 +58,7 @@ export default {
   width: 100%; /* Full width */
   height: 100%; /* Full height */
   overflow: auto; /* Enable scroll if needed */
-  background-color: rgba(0, 0, 0, 0.3); /* Black w/ opacity */
+  background-color: rgba(0, 0, 0, 0.2); /* Black w/ opacity */
 }
 
 /* Modal Content/Box */

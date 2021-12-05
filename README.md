@@ -49,3 +49,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [ ] Need to fetch some resources in advance such as `fyy-play.png` and `fyy-pause.png`.
 - [ ] Custom play list and sharing.
 - [ ] Friendly way to upload sounds.
+- [ ] Cursor
