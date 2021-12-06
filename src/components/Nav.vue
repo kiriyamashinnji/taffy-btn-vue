@@ -72,6 +72,7 @@ export default {
 <style scoped>
 /* SideBar */
 aside.side-bar-wrap {
+  background-color: var(--color-primary);
   --radius-size: 40px;
   z-index: 1;
   height: 100%;
@@ -89,7 +90,6 @@ aside.side-bar-wrap {
 
 nav.side-bar {
   min-height: 100%;
-  background-color: var(--bs-primary);
   display: inline-block;
   padding-left: var(--side-padding);
   padding-right: var(--side-padding);
@@ -118,7 +118,7 @@ nav.side-bar ul {
 .logo-text {
   font-size: 2rem;
   font-weight: bold;
-  color: var(--bs-body-bg);
+  color: var(--color-bg);
   transition: 0.75s ease-out;
 }
 
@@ -127,7 +127,7 @@ nav.side-bar ul {
   height: 3px;
   padding: 1px;
   margin: auto;
-  background-color: var(--bs-body-bg);
+  background-color: var(--color-bg);
   border-radius: 3px;
 }
 </style>

@@ -35,7 +35,7 @@ export default {
 .taffy-redir:hover {
   font-weight: bold;
   text-decoration: none;
-  color: var(--bs-primary);
+  color: var(--color-primary);
 }
 .footer {
   padding: 0.7rem 0;
@@ -46,7 +46,7 @@ export default {
   text-align: center;
   position: fixed;
   width: 100%;
-  background-color: var(--bs-secondary);
+  background-color: var(--color-secondary);
 }
 
 @media (max-width: 767px) {

@@ -46,7 +46,7 @@ export default {
 .group-header {
     position: relative;
     font-size: 28px;
-    color: var(--bs-primary);
+    color: var(--color-primary);
     font-weight: bold;
     text-align: left;
 }
@@ -54,7 +54,7 @@ export default {
 
 
 .group-container {
-    background: var(--bs-secondary);
+    background: var(--color-secondary);
     margin-top: 2rem;
     padding: 4.5rem 0.7rem 0.7rem 0.7rem;
 
@@ -71,7 +71,7 @@ export default {
     width: 5rem;
     border-radius: 50%;
     border: 5px solid white;
-    background: var(--bs-secondary);
+    background: var(--color-secondary);
 }
 .header-text {
     position: absolute;

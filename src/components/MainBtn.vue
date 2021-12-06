@@ -21,7 +21,7 @@
 
     <Widgets
       @pause="pause"
-      @_continue="_continue"
+      @continuePlay="continuePlay"
       @playRandom="playRandom"
       @setMode="setMode"
     />
@@ -102,7 +102,7 @@ export default {
       this.paused = true;
     },
 
-    _continue: function () {
+    continuePlay: function () {
       this.playList.forEach((audio) => {
         audio.play();
       });

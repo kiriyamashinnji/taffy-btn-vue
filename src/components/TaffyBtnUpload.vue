@@ -65,16 +65,10 @@ export default {
 
     function inputFile(newFile, oldFile) {
       if (newFile && !oldFile) {
-        // add
-        console.log("add", newFile);
       }
       if (newFile && oldFile) {
-        // update
-        console.log("update", newFile);
       }
       if (!newFile && oldFile) {
-        // remove
-        console.log("remove", oldFile);
       }
     }
 
@@ -168,7 +162,7 @@ div {
   text-align: left;
   position: relative;
   padding: 0.15rem 0.5rem 0.15rem 1rem;
-  background-color: var(--bs-primary);
+  background-color: var(--color-primary);
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -177,7 +171,7 @@ div {
   margin: 0.7rem;
   box-shadow: 1px 1.3px 5.2px #fd507e71;
   font-size: 1.3rem;
-  color: var(--bs-body-bg);
+  color: var(--color-bg);
 
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -199,7 +193,7 @@ div {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--bs-btn-hover);
+  background: var(--color-hover);
   border-radius: 100%;
   -webkit-transform: scale(0);
   transform: scale(0);

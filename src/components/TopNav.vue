@@ -31,7 +31,7 @@ export default {};
   align-items: center;
   height: 5rem;
   justify-content: space-between;
-  background-color: var(--bs-body-bg);
+  background-color: var(--color-bg);
 }
 
 .nav-settings {
@@ -39,7 +39,7 @@ export default {};
 }
 
 .taffy-dir {
-  color: var(--bs-primary);
+  color: var(--color-primary);
   text-decoration: none;
   font-size: 1.75rem;
   background: rgb(255, 240, 240);
@@ -57,7 +57,7 @@ export default {};
 }
 
 .title {
-  color: var(--bs-primary);
+  color: var(--color-primary);
   text-decoration: none;
   font-size: 3rem;
   margin-left: 2.5rem;
@@ -78,7 +78,7 @@ export default {};
   padding: 1px;
   margin: auto;
   margin-top: 0.5rem;
-  background-color: var(--bs-primary);
+  background-color: var(--color-primary);
   border-radius: 3px;
 }
 
@@ -108,7 +108,7 @@ export default {};
     padding: 1px;
     margin: auto;
     margin-top: 0.5rem;
-    background-color: var(--bs-primary);
+    background-color: var(--color-primary);
     border-radius: 3px;
   }
 }

@@ -5,11 +5,15 @@
       <div class="modal-header">上传声音</div>
 
       <div class="modal-body">
+        <div style="margin-right:1rem">
+
         <label for="classification" class="form-label">分类</label>
-        <div class="form-input" style="background-color: rgb(250, 250, 250)">
+        <div class="form-input" style="background-color: rgba(250, 250, 250, 0.8)">
           {{ classification }}
         </div>
+
         <label for="title" class="form-label">标题</label>
+
         <input
           type="text"
           id="title"
@@ -24,11 +28,13 @@
           placeholder="您的尊姓大名"
           class="form-input"
         />
+        </div>
+
       </div>
 
       <div class="modal-footer">
-        <button class="form-cancel" @click="cancel">取消</button>
-        <button class="form-submit" @click="submit">上传</button>
+        <button class="form-cancel form-btn" @click="cancel">取消</button>
+        <button class="form-submit form-btn" @click="submit">上传</button>
       </div>
     </div>
   </div>
@@ -78,6 +84,8 @@ export default {
 <style scoped>
 .modal {
   /* display: none; Hidden by default */
+  font-size: 1.5rem;
+
   position: fixed; /* Stay in place */
   z-index: 3; /* Sit on top */
   left: 0;
@@ -90,17 +98,16 @@ export default {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: var(--bs-body-bg);
+  background-color: var(--color-bg);
   margin: 10rem auto; /* 15% from the top and centered */
   border: 1px solid rgba(0, 0, 0, 0.5);
-  width: 25rem; /* Could be more or less, depending on screen size */
+  width: 30rem; /* Could be more or less, depending on screen size */
   border-radius: 0.5rem;
   background: center / cover  url(../assets/modalback.png);
 }
 
 .modal-header {
   padding: 1rem;
-  font-size: 1.4rem;
   font-weight: bold;
   text-align: left;
   border-bottom: 1px solid #e9ecef;
@@ -108,12 +115,10 @@ export default {
 
 .modal-body {
   padding: 1rem;
-  font-size: 1.4rem;
   text-align: left;
 }
 
 .modal-footer {
-  font-size: 1.4rem;
   padding: 1rem;
   text-align: right;
   border-top: 1px solid #e9ecef;
@@ -132,33 +137,40 @@ export default {
 }
 
 .form-input {
-  margin-bottom: 1rem;
+  position: relative;
+  margin-bottom: 2rem;
   font-size: 1.2rem;
   height: 1.5rem;
   border: 1px solid #e9ecef;
   border-radius: 0.25rem;
   padding: 0.5rem;
-  width: 18rem;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(5px);
+}
+
+.form-input:focus {
+  outline: none;
+  border: 1px solid #acacac;
+}
+
+.form-btn {
+  font-size: 1.2rem;
+  border-radius: 0.25rem;
+  padding: 0.7rem 2rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  border: none;
 }
 
 .form-submit {
-  background-color: var(--bs-primary);
-  color: var(--bs-body-bg);
-  border: none;
-  border-radius: 0.25rem;
-  padding: 0.5rem;
-  width: 4rem;
-  margin-left: 1rem;
+  background-color: var(--color-primary);
+  color: var(--color-bg);
 }
 
 .form-cancel {
-  background-color: var(--bs-secondary);
-  color: var(--bs-primary);
-  border: none;
-  border-radius: 0.25rem;
-  padding: 0.5rem;
-  width: 4rem;
-  margin-left: 1rem;
+  background-color: var(--color-secondary);
+  color: var(--color-primary);
 }
 
 .modal-enter-from,

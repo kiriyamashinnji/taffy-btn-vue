@@ -33,19 +33,20 @@ export default {
     return {
       width: 0,
       duration: 0,
+      clickedJustNow: false,
     };
   },
 
   mounted() {
     this.width = String(this.$refs.el.clientWidth) + "px";
-    this.duration = String(this.btn.voice_length) + "s";
+    this.duration = String(this.btn.voice_length-0.02) + "s";
   },
 
   computed: {
     classObject() {
       return {
         paused: this.isPaused,
-        active: this.playUrlList.indexOf(this.btn.voice_url) > -1,
+        active: this.playUrlList.indexOf(this.btn.voice_url) > -1 && !this.clickedJustNow,
       };
     },
   },
@@ -53,7 +54,10 @@ export default {
   methods: {
     onClick: function () {
       this.$emit("play", this.btn.voice_url);
-      this.active = false;
+      this.clickedJustNow = true;
+      setTimeout(() => {
+        this.clickedJustNow = false;
+      }, 50);
     },
   },
 };
@@ -92,7 +96,7 @@ div {
   text-align: left;
   position: relative;
   padding: 0.15rem 0.5rem 0.15rem 1rem;
-  background-color: var(--bs-primary);
+  background-color: var(--color-primary);
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
@@ -101,7 +105,7 @@ div {
   margin: 0.7rem;
   box-shadow: 1px 1.3px 5.2px #fd507e71;
   font-size: 1.3rem;
-  color: var(--bs-body-bg);
+  color: var(--color-bg);
 
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
@@ -124,7 +128,7 @@ div {
   left: 0;
   right: 0;
   bottom: 0;
-  background: var(--bs-btn-hover);
+  background: var(--color-hover);
   border-radius: 100%;
   -webkit-transform: scale(0);
   transform: scale(0);
@@ -155,9 +159,9 @@ div {
   width: 60px;
   height: 60px;
   background-image: url(../assets/fyy-play.png);
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Do not repeat the image */
-  background-size: cover; /* Resize the background image to cover the entire container */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
   visibility: hidden;
   transition-duration: 0s;
 }
@@ -165,7 +169,7 @@ div {
 .progress-bar.active {
   visibility: visible;
   float: left;
-  animation: mymove v-bind(duration) linear forwards;
+  animation: mymove v-bind(duration) linear forwards infinite;
 }
 
 .progress-bar.active.paused {
@@ -174,7 +178,7 @@ div {
 
 @keyframes mymove {
   0% {
-    left: 0rem;
+    left: -0.5rem;
     opacity: 0;
   }
   5% {
@@ -184,7 +188,7 @@ div {
     opacity: 1;
   }
   100% {
-    left: v-bind(width);
+    left: calc(v-bind(width) - 1.5rem);
     opacity: 0;
   }
 }
@@ -192,8 +196,6 @@ div {
 .btn-warper {
   position: relative;
   display: inline-flex;
-  justify-content: center;
-  align-content: center;
 }
 
 @media (max-width: 767px) {
@@ -216,12 +218,12 @@ div {
   }
 
   .progress-bar.active {
-    animation: mymove1 v-bind(duration) linear forwards;
+    animation: mymove1 v-bind(duration) linear forwards infinite;
   }
  
   @keyframes mymove1 {
     0% {
-      left: -0.5rem;
+      left: 0;
       opacity: 0;
     }
     5% {
@@ -231,7 +233,7 @@ div {
       opacity: 1;
     }
     100% {
-      left: v-bind(width);
+      left: calc(v-bind(width) - 0.5rem);
       opacity: 0;
     }
   }

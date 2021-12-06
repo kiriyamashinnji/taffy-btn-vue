@@ -45,13 +45,13 @@ nav.side-bar ul li:not(.active):hover {
 }
 nav.side-bar ul li.active {
   position: relative;
-  background-color: var(--bs-body-bg);
+  background-color: var(--color-bg);
   border-radius: var(--radius-size) 0 0 var(--radius-size);
-  box-shadow: 13px 0 var(--bs-body-bg);
+  box-shadow: 13px 0 var(--color-bg);
 }
 
 li.active > a {
-  color: var(--bs-primary) !important;
+  color: var(--color-primary) !important;
 }
 
 nav.side-bar ul li.active::before,
@@ -60,7 +60,6 @@ nav.side-bar ul li.active::after {
   content: "";
   width: var(--curve-size);
   height: var(--curve-size);
-  background-color: var(--color-primary);
   left: calc(100% + var(--side-padding) - var(--curve-size));
   border-radius: 50%;
   position: absolute;
@@ -68,15 +67,15 @@ nav.side-bar ul li.active::after {
 nav.side-bar ul li.active::before {
   top: calc(-1 * var(--curve-size));
   box-shadow: calc(1 * var(--curve-size) * 0.5) calc(var(--curve-size) * 0.5)
-    var(--bs-body-bg);
+    var(--color-bg);
 }
 nav.side-bar ul li.active::after {
   bottom: calc(-1 * var(--curve-size));
   box-shadow: calc(1 * var(--curve-size) * 0.5)
-    calc(-1 * var(--curve-size) * 0.5) var(--bs-body-bg);
+    calc(-1 * var(--curve-size) * 0.5) var(--color-bg);
 }
 nav.side-bar ul li a {
-  color: var(--bs-body-bg);
+  color: var(--color-bg);
   font-size: 16pt;
   width: 100%;
   height: 100%;
@@ -115,7 +114,7 @@ aside:hover nav.side-bar span.title {
 
 .icon {
   overflow: hidden;
-  background-color: var(--bs-body-bg);
+  background-color: var(--color-bg);
   padding: 0rem;
   border-radius: 30%;
 }

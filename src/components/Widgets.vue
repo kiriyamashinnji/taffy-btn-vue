@@ -64,7 +64,7 @@ export default {
           if (this.paused) {
             this.$emit("pause");
           } else {
-            this.$emit("_continue");
+            this.$emit("continuePlay");
           }
           break;
         case 2:

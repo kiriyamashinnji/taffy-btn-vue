@@ -6,17 +6,17 @@
 
 <style>
 :root {
-  --bs-primary: #fd507e;
-  --bs-body-bg: #fffffa;
-  --bs-btn-hover: #cf2f59;
+  --color-primary: #fd507e;
+  --color-bg: #fffffa;
+  --color-hover: #cf2f59;
   --side-padding: 10px;
   --radius-size: 25px;
-  --bs-secondary: #ffe2df;
+  --color-secondary: #ffe2df;
 }
 
 @media (max-width: 767px) {
   :root {
-    --bs-body-bg: #fffbf0;
+    --color-bg: #fffbf0;
  }
 }
 
@@ -29,6 +29,6 @@
 }
 
 html {
-  background-color: var(--bs-body-bg);
+  background-color: var(--color-bg);
 }
 </style>

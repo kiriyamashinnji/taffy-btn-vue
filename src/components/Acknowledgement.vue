@@ -63,7 +63,7 @@ export default {
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: var(--bs-body-bg);
+  background-color: var(--color-bg);
   margin: 10rem auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid rgb(255, 225, 225);
