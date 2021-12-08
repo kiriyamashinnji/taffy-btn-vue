@@ -4,7 +4,7 @@
       <div class="group-header">
         <img class="group-icon" :src="btns.icon_url" alt="">
         <div class="header-text">
-        {{btns.button_classification}}
+        {{btns.category_name}}
 
         </div>
       </div>

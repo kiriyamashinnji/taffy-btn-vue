@@ -72,7 +72,7 @@ export default {
       if (!this.init) {
         this.init = true;
         this.btnOverview.forEach((btnGroup) => {
-          btnGroup.button_list.forEach((btn) => {
+          btnGroup.button.forEach((btn) => {
             this.soundList.push(btn.voice_url);
           });
         });

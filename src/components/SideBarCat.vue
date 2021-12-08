@@ -110,6 +110,7 @@ aside:hover nav.side-bar span.title {
 
 .icon img {
   width: 5rem;
+  height: 5rem;
 }
 
 .icon {

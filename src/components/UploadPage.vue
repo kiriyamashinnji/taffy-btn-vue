@@ -7,9 +7,9 @@
       <div class="modal-body">
         <div style="margin-right:1rem">
 
-        <label for="classification" class="form-label">分类</label>
+        <label for="category_name" class="form-label">分类</label>
         <div class="form-input" style="background-color: rgba(250, 250, 250, 0.8)">
-          {{ classification }}
+          {{ category_name }}
         </div>
 
         <label for="title" class="form-label">标题</label>
@@ -23,8 +23,8 @@
         />
         <input
           type="text"
-          id="name_"
-          v-model="name_"
+          id="author"
+          v-model="author"
           placeholder="您的尊姓大名"
           class="form-input"
         />
@@ -43,7 +43,7 @@
 <script>
 export default {
   props: {
-    classification: String,
+    category_name: String,
     voiceName: String,
   },
 
@@ -59,7 +59,7 @@ export default {
     submit() {
       this.$emit("submit", {
         title: this.title,
-        name_: this.name_,
+        author: this.author,
       });
     },
     cancel(e) {
@@ -75,7 +75,7 @@ export default {
 
   data() {
     return {
-      name_: "",
+      author: "",
     };
   },
 };

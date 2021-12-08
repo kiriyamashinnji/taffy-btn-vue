@@ -16,7 +16,7 @@
           <SideBarCat
             v-for="(btns, index) in btnOverview"
             :key="btns"
-            :categoryName="btns.button_classification"
+            :categoryName="btns.category_name"
             :categoryId="index"
             :activeId="activeId"
             :iconUrl="btns.icon_url"
