@@ -76,12 +76,7 @@ export default {
       this.error = null;
 
       axios
-        .get("http://110.40.128.2/api/btn/overviews", {
-          mode: "no-cors",
-          headers: {
-            'Access-Control-Allow-Credentials': true
-          }
-        })
+        .get("http://110.40.128.2/api/btn/overviews", {})
         .then((response) => {
           this.loading = false;
           this.btnOverview = response.data.data;

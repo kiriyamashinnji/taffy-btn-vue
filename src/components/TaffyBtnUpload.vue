@@ -75,6 +75,7 @@ export default {
 
   props: {
     category_name: String,
+    category_id: Number,
   },
 
   computed: {
@@ -93,7 +94,7 @@ export default {
         url: "http://110.40.128.2/api/btn/upload",
         data: {
           voice_name: args["voiceName"],
-          category_id: this.categoryId,
+          category_id: this.category_id,
           file: this.file[0],
           author: args["author"],
         }

@@ -1,14 +1,14 @@
 <template>
   <div class="btn-group">
     <TaffyBtn 
-    v-for="btn in btns.button" 
+    v-for="btn in btns.button_list" 
     :key="btn" 
     :btn="btn"
     :isPaused="isPaused"
     :playUrlList="playUrlList"
     @play="onPlay"/>
 
-    <TaffyBtnUpload :category_name="btns.category_name" />
+    <TaffyBtnUpload :category_name="btns.category_name" :category_id="btns.category_id" />
   </div>
 </template>
 
