@@ -8,7 +8,7 @@
     :playUrlList="playUrlList"
     @play="onPlay"/>
 
-    <TaffyBtnUpload :classification="btns.button_classification" />
+    <TaffyBtnUpload :category_name="btns.category_name" :category_id="btns.category_id" />
   </div>
 </template>
 

@@ -43,13 +43,13 @@ export default {
       loading: false,
       btnOverview: [
         {
-          button_list: [
+          button: [
             {
               voice_name: "",
               voice_url: "",
             },
           ],
-          button_classification: "",
+          category_name: "",
           icon_url: "",
         },
       ],
@@ -76,9 +76,7 @@ export default {
       this.error = null;
 
       axios
-        .get("http://117.50.163.143/taffy-btn-api/get-overview", {
-          mode: "no-cors",
-        })
+        .get("http://110.40.128.2/api/btn/overviews", {})
         .then((response) => {
           this.loading = false;
           this.btnOverview = response.data.data;
@@ -87,9 +85,11 @@ export default {
           this.error = error;
         });
     },
+    
     closeContributors() {
       this.contributorsShown = false;
     },
+    
     showContributors() {
       this.contributorsShown = true;
     },

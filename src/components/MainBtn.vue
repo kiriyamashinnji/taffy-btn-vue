@@ -92,7 +92,7 @@ export default {
 
       audio.url = url;
 
-      audio.onplay = ()=>{onAddUrl(this, audio)};
+      audio.onloadeddata = ()=>{onAddUrl(this, audio)};
     },
 
     pause: function () {
@@ -156,6 +156,7 @@ function randInt(l, h) {
 }
 
 function onAddUrl(comp, audio) {
+  console.log("onAddUrl");
   comp.playList.push(audio);
   generatePlayUrlList(comp);
 }

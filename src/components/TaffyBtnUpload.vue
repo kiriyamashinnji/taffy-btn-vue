@@ -23,7 +23,7 @@
     <transition name="modal">
       <UploadPage
         v-if="isUploaded"
-        :classification="classification"
+        :category_name="category_name"
         :voiceName="voiceName"
         @submit="uploadVoice"
         @cancel="cancelSubmit"
@@ -63,14 +63,7 @@ export default {
       }
     }
 
-    function inputFile(newFile, oldFile) {
-      if (newFile && !oldFile) {
-      }
-      if (newFile && oldFile) {
-      }
-      if (!newFile && oldFile) {
-      }
-    }
+    function inputFile(newFile, oldFile) {}
 
     return {
       file,
@@ -81,7 +74,8 @@ export default {
   },
 
   props: {
-    classification: String,
+    category_name: String,
+    category_id: Number,
   },
 
   computed: {
@@ -95,30 +89,14 @@ export default {
 
   methods: {
     uploadVoice(args) {
-      let classification = this.classification;
-
-      let formData = new FormData();
-      formData.append("detail", {
-        ...args,
-        classification,
-      });
-
-      formData.append("file", this.file[0]);
-
-      for(var x of formData.values()) {
-        console.log(x);
-      }
-
-
       axios({
         method: "post",
-        url: "http://117.50.163.143/taffy-btn-api/upload-voice",
+        url: "http://110.40.128.2/api/btn/upload",
         data: {
-          detail: {
-            ...args,
-            classification,
-          },
+          voice_name: args["voiceName"],
+          category_id: this.category_id,
           file: this.file[0],
+          author: args["author"],
         }
       })
         .then((res) => {
