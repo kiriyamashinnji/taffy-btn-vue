@@ -9,7 +9,6 @@
 
 <script>
 import Xray from "../components/Xray.vue";
-
 export default {
   components: {
     Xray,
@@ -36,7 +35,7 @@ export default {
   width: 100vw;
   z-index: -1;
   position: absolute;
-  filter: blur(5px) brightness(0.95);
+  filter: blur(3px) brightness(0.95);
   transform: scale(1.2); 
 }
 </style>

@@ -98,23 +98,23 @@ export default {
 }
 
 .c-1 {
-  transform: rotate(30deg);
+  transform: rotate(30deg) translateZ(0);
 }
 
 .c-2 {
-  transform: rotate(120deg);
+  transform: rotate(120deg) translateZ(0);
 }
 
 .c-3 {
-  transform: rotate(210deg);
+  transform: rotate(210deg) translateZ(0);
 }
 
 .c-4 {
-  transform: rotate(300deg);
+  transform: rotate(300deg) translateZ(0);
 }
 
 .control-leaf.folded {
-  transform: rotate(30deg);
+  transform: rotate(30deg) translateZ(0);
 }
 
 .expanded-leaf {
@@ -136,22 +136,22 @@ export default {
 
 .expanded-leaf.l-1 {
   transition: 0.06s linear;
-  transform: translateY(-6rem) rotate(30deg);
+  transform: translateY(-6rem) rotate(30deg)  translateZ(0);
 }
 
 .expanded-leaf.l-2 {
   transition: 0.12s linear;
-  transform: translateY(-12rem) rotate(30deg);
+  transform: translateY(-12rem) rotate(30deg)  translateZ(0);
 }
 
 .expanded-leaf.l-3 {
   transition: 0.18s linear;
-  transform: translateY(-18rem) rotate(30deg);
+  transform: translateY(-18rem) rotate(30deg) translateZ(0);
 }
 
 .expanded-leaf.l-4 {
   transition: 0.24s linear;
-  transform: translateY(-24rem) rotate(30deg);
+  transform: translateY(-24rem) rotate(30deg) translateZ(0);
 }
 
 .leaf-content {
@@ -174,7 +174,7 @@ export default {
   right: 4.46rem;
   width: 2.2rem;
   transition: 0.24s linear;
-  transform: translateY(-24rem) rotate(30deg);
+  transform: translateY(-24rem) rotate(30deg) translateZ(0);
 }
 
 .leaf-content.l-3 {
@@ -182,7 +182,7 @@ export default {
   right: 4.35rem;
   width: 2.5rem;
   transition: 0.18s linear;
-  transform: translateY(-18rem) rotate(30deg);
+  transform: translateY(-18rem) rotate(30deg) translateZ(0);
 }
 
 .leaf-content.l-2 {
@@ -190,7 +190,7 @@ export default {
   right: 4.15rem;
   width: 2.8rem;
   transition: 0.12s linear;
-  transform: translateY(-12rem) rotate(30deg);
+  transform: translateY(-12rem) rotate(30deg) translateZ(0);
 }
 
 .leaf-content.l-1 {
@@ -198,7 +198,7 @@ export default {
   right: 4.28rem;
   width: 2.8rem;
   transition: 0.06s linear;
-  transform: translateY(-6rem) rotate(30deg);
+  transform: translateY(-6rem) rotate(30deg) translateZ(0);
 }
 
 .leaf-description {
@@ -215,27 +215,27 @@ export default {
 
 .leaf-description.unfolded {
   opacity: 0;
-  transform: translateY(0) !important;
+  transform: translateY(0) translateZ(0) !important;
 }
 
 .leaf-description.l-4 {
   transition: 0.24s linear;
-  transform: translateY(-24rem);
+  transform: translateY(-24rem) translateZ(0);
 }
 
 .leaf-description.l-3 {
   transition: 0.18s linear;
-  transform: translateY(-18rem);
+  transform: translateY(-18rem) translateZ(0);
 }
 
 .leaf-description.l-2 {
   transition: 0.12s linear;
-  transform: translateY(-12rem);
+  transform: translateY(-12rem) translateZ(0);
 }
 
 .leaf-description.l-1 {
   transition: 0.06s linear;
-  transform: translateY(-6rem);
+  transform: translateY(-6rem) translateZ(0);
 }
 
 @media (max-width: 767px) {
@@ -253,22 +253,22 @@ export default {
 
   .expanded-leaf.l-1 {
     transition: 0.06s linear;
-    transform: translateY(-5rem) rotate(30deg);
+    transform: translateY(-5rem) rotate(30deg) translateZ(0);
   }
 
   .expanded-leaf.l-2 {
     transition: 0.12s linear;
-    transform: translateY(-10rem) rotate(30deg);
+    transform: translateY(-10rem) rotate(30deg) translateZ(0);
   }
 
   .expanded-leaf.l-3 {
     transition: 0.18s linear;
-    transform: translateY(-15rem) rotate(30deg);
+    transform: translateY(-15rem) rotate(30deg) translateZ(0);
   }
 
   .expanded-leaf.l-4 {
     transition: 0.24s linear;
-    transform: translateY(-20rem) rotate(30deg);
+    transform: translateY(-20rem) rotate(30deg) translateZ(0);
   }
 
   .leaf-content {
@@ -279,28 +279,28 @@ export default {
     bottom: 4.71rem;
     width: 1.45rem;
     right: 2.25rem;
-    transform: translateY(-20rem) rotate(30deg);
+    transform: translateY(-20rem) rotate(30deg) translateZ(0);
   }
 
   .leaf-content.l-3 {
     bottom: 4.71rem;
     width: 1.75rem;
     right: 2.16rem;
-    transform: translateY(-15rem) rotate(30deg);
+    transform: translateY(-15rem) rotate(30deg) translateZ(0);
   }
 
   .leaf-content.l-2 {
     bottom: 4.83rem;
     width: 1.79rem;
     right: 2.13rem;
-    transform: translateY(-10rem) rotate(30deg);
+    transform: translateY(-10rem) rotate(30deg) translateZ(0);
   }
 
   .leaf-content.l-1 {
     bottom: 4.73rem;
     width: 1.79rem;
     right: 2.13rem;
-    transform: translateY(-5rem) rotate(30deg);
+    transform: translateY(-5rem) rotate(30deg) translateZ(0);
   }
 
 .leaf-description {
@@ -315,27 +315,27 @@ export default {
 
   .leaf-description.unfolded {
     opacity: 0;
-    transform: translateY(0) !important;
+    transform: translateY(0) translateZ(0) !important;
   }
 
   .leaf-description.l-4 {
     transition: 0.24s linear;
-    transform: translateY(-20rem);
+    transform: translateY(-20rem) translateZ(0);
   }
 
   .leaf-description.l-3 {
     transition: 0.18s linear;
-    transform: translateY(-15rem);
+    transform: translateY(-15rem) translateZ(0);
   }
 
   .leaf-description.l-2 {
     transition: 0.12s linear;
-    transform: translateY(-10rem);
+    transform: translateY(-10rem) translateZ(0);
   }
 
   .leaf-description.l-1 {
     transition: 0.06s linear;
-    transform: translateY(-5rem);
+    transform: translateY(-5rem) translateZ(0);
   }
 }
 </style>

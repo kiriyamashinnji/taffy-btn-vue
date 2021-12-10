@@ -1,16 +1,17 @@
 <template>
   <div class="container">
-    <img
-      src="../assets/omote.png"
-      ref="el"
-      style="max-height: 100vh"
-    />
+    <img src="../assets/omote.png" ref="el" style="max-height: 100vh" />
     <img
       src="../assets/ura.png"
       class="ura"
       style="max-height: 100vh"
       @click="OnClick"
     />
+
+      <PopingHearts v-for="heart in hearts" :heart="heart" :key="heart"
+        style="position: absolute"
+        :style="{ left: `${heart.x-15}px`, top: `${heart.y-25}px` }"
+      />
   </div>
 </template>
 
@@ -18,6 +19,7 @@
 import { ref } from "vue";
 import { useElementBounding } from "@vueuse/core";
 import { useMouse } from "@vueuse/core";
+import PopingHearts from "./PopingHearts.vue";
 
 export default {
   setup() {
@@ -36,6 +38,10 @@ export default {
       width,
       height,
     };
+  },
+
+  components: {
+    PopingHearts,
   },
 
   data() {
@@ -76,6 +82,7 @@ export default {
             "http://110.40.128.2/resources/voices/e4/36416d140ef94f4d6a9f8083d41415.mp3",
         },
       ],
+      hearts: [],
     };
   },
 
@@ -94,6 +101,10 @@ export default {
         let audio = new Audio(region.voice_url);
         audio.play();
       }
+      this.hearts.push({ x: this.x, y: this.y });
+      setTimeout(() => {
+        this.hearts.shift();
+      }, 2000);
     },
 
     pointInPolygon(px, py, vertices) {
