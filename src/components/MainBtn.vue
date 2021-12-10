@@ -91,8 +91,7 @@ export default {
       audio.play();
 
       audio.url = url;
-
-      audio.onloadeddata = ()=>{onAddUrl(this, audio)};
+      audio.onplaying = ()=>{onAddUrl(this, audio)};
     },
 
     pause: function () {
