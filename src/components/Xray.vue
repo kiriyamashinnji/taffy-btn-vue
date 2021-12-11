@@ -1,17 +1,25 @@
 <template>
   <div class="container">
-    <img src="../assets/omote.png" ref="el" style="max-height: 100vh" />
     <img
-      src="../assets/ura.png"
+      src="https://raw.githubusercontent.com/kiriyamashinnji/taffy-btn-vue/develop/src/assets/omote.png"
+      ref="el"
+      style="max-height: 100vh"
+    />
+    <img
+      src="https://raw.githubusercontent.com/kiriyamashinnji/taffy-btn-vue/develop/src/assets/ura.png"
       class="ura"
+      :class="{ active: isActive }"
       style="max-height: 100vh"
       @click="OnClick"
     />
 
-      <PopingHearts v-for="heart in hearts" :heart="heart" :key="heart"
-        style="position: absolute"
-        :style="{ left: `${heart.x-15}px`, top: `${heart.y-25}px` }"
-      />
+    <PopingHearts
+      v-for="heart in hearts"
+      :heart="heart"
+      :key="heart"
+      style="position: absolute"
+      :style="{ left: `${heart.x - 15}px`, top: `${heart.y - 25}px` }"
+    />
   </div>
 </template>
 
@@ -147,18 +155,35 @@ export default {
     cursorYPosition() {
       return `${(this.elementY / this.height) * 100}%`;
     },
+    isActive() {
+      const px = this.elementX / this.width;
+      const py = this.elementY / this.height;
+      const region = this.touchRegions.find((r) => {
+        // if px py is inside the polygon
+        if (this.pointInPolygon(px, py, r.vertices)) {
+          return r;
+        }
+      });
+      return !!region;
+    },
   },
 };
 </script>
 
-<style scoped >
+<style scoped>
 .container {
   display: flex;
   justify-content: center;
 }
 
+.active {
+  cursor: pointer !important;
+}
+
 .ura {
   position: absolute;
-  clip-path: circle(8rem at v-bind(cursorXPosition) v-bind(cursorYPosition));
+  /* clip-path: circle(8rem at v-bind(cursorXPosition) v-bind(cursorYPosition)); */
+  -webkit-mask: radial-gradient(9rem 9rem at v-bind(cursorXPosition) v-bind(cursorYPosition),white 90%,transparent);
+          mask: radial-gradient(9rem 9rem at v-bind(cursorXPosition) v-bind(cursorYPosition),white 90%,transparent);
 }
 </style>

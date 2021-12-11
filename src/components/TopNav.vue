@@ -4,6 +4,10 @@
       <div style="display: flex; align-content: center; align-items: center">
         <div class="title">雏按钮</div>
 
+        <!-- <router-link to="/xray" class="taffy-dir">
+          戳戳
+        </router-link> -->
+
         <a href="http://space.bilibili.com/1265680561/" class="taffy-dir">
           @永雏塔菲
         </a>
