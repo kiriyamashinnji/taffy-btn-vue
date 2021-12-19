@@ -51,3 +51,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [ ] Friendly way to upload sounds.
 - [ ] Cursor
 - [ ] Need to fetch some resources in advance such as `fyy-play.png` and `fyy-pause.png` 
+- [ ] Need to fetch some resources in advance such as `fyy-play.png` and `fyy-pause.png` 
