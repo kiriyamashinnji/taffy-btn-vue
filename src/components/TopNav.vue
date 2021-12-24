@@ -2,15 +2,20 @@
   <div>
     <div class="top-nav">
       <div style="display: flex; align-content: center; align-items: center">
-        <div class="title">雏按钮</div>
-
-        <!-- <router-link to="/xray" class="taffy-dir">
-          戳戳
-        </router-link> -->
-
+        <div class="title">
+          <slot></slot>
+        </div>
         <a href="http://space.bilibili.com/1265680561/" class="taffy-dir">
           @永雏塔菲
         </a>
+        
+        <router-link to="/">雏按钮</router-link>
+
+        <router-link to="/audit">审核</router-link>
+        <router-link to="/compose">编曲</router-link>
+
+
+
       </div>
 
       <div class="nav-custom">

@@ -19,7 +19,7 @@
     />
 
 
-    <Widgets
+    <PlayWidgets
       @pause="pause"
       @continuePlay="continuePlay"
       @playRandom="playRandom"
@@ -30,7 +30,7 @@
 
 <script>
 import TaffyBtnGroup from "./TaffyBtnGroup.vue";
-import Widgets from "./Widgets.vue";
+import PlayWidgets from "./PlayWidgets.vue";
 import TaffyBtnGroups from "./TaffyBtnGroups.vue";
 import { useWindowSize } from "@vueuse/core";
 
@@ -39,7 +39,7 @@ export default {
   components: {
     TaffyBtnGroup,
     TaffyBtnGroups,
-    Widgets,
+    PlayWidgets,
   },
   
   setup() {

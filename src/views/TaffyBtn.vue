@@ -1,16 +1,16 @@
 <template>
   <div class="home">
-    <Nav
+    <SideBar
       :btnOverview="btnOverview"
       @sideBarToggled="toggleSideBar"
       @activeSetted="setActive"
     />
     <MainContainer :sideBarToggled="sideBarToggled">
-      <TopNav></TopNav>
+      <TopNav>雏按钮</TopNav>
       <MainBtn :btnOverview="btnOverview" :activeId="activeId"></MainBtn>
     </MainContainer>
-    <Footer @showContributors="showContributors" />
 
+    <Footer @showContributors="showContributors"/>
     <transition name="modal">
       <Acknowledgement v-if="contributorsShown" @close="closeContributors" />
     </transition>
@@ -20,7 +20,7 @@
 <script>
 import TopNav from "../components/TopNav.vue";
 import MainContainer from "../components/MainContainer.vue";
-import Nav from "../components/Nav.vue";
+import SideBar from "../components/SideBar.vue";
 import Footer from "../components/Footer.vue";
 import Acknowledgement from "../components/Acknowledgement.vue";
 import MainBtn from "../components/MainBtn.vue";
@@ -31,7 +31,7 @@ export default {
 
   components: {
     TopNav,
-    Nav,
+    SideBar,
     Footer,
     Acknowledgement,
     MainContainer,

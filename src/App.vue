@@ -30,5 +30,6 @@
 
 html {
   background-color: var(--color-bg);
+  font-family: 'Source Sans Pro', sans-serif;
 }
 </style>
