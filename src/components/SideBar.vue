@@ -13,7 +13,7 @@
         </div>
         <div class="divider"></div>
         <ul>
-          <SideBarCat
+          <SideBarCategory
             v-for="(btns, index) in btnOverview"
             :key="btns"
             :categoryName="btns.category_name"
@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import SideBarCat from "./SideBarCat.vue";
+import SideBarCategory from "./SideBarCategory.vue";
 
 export default {
   name: "Nav",
@@ -39,7 +39,7 @@ export default {
   },
 
   components: {
-    SideBarCat,
+    SideBarCategory,
   },
 
   mounted() {},
